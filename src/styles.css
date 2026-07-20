@@ -454,21 +454,47 @@ p {
 }
 .about {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  gap: 100px;
+  grid-template-columns: minmax(430px, 0.9fr) 1.1fr;
+  gap: clamp(56px, 6vw, 100px);
   padding: 120px clamp(28px, 8vw, 128px);
   background: var(--lavender);
   align-items: center;
 }
-.about-mark {
-  font-family: Georgia, serif;
-  font-size: clamp(100px, 14vw, 210px);
-  color: var(--purple);
-  letter-spacing: -0.12em;
+.about-collage {
+  --hex-w: clamp(180px, 14vw, 240px);
+  --hex-h: calc(var(--hex-w) * 1.155);
+  position: relative;
+  width: calc(var(--hex-w) * 2.38);
+  height: calc(var(--hex-h) * 1.72);
+  max-width: 100%;
+  justify-self: center;
 }
-.about-mark span {
-  color: var(--violet);
+.hex {
+  position: absolute;
+  width: var(--hex-w);
+  height: var(--hex-h);
+  margin: 0;
+  padding: 4px;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+  background: linear-gradient(145deg, rgba(116,83,197,.95), rgba(62,5,69,.9));
+  filter: drop-shadow(0 16px 22px rgba(45, 16, 58, .18));
 }
+.hex img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  clip-path: inherit;
+  filter: contrast(1.04) saturate(.94);
+}
+.hex-1 { left: 0; top: 0; }
+.hex-2 { left: calc(var(--hex-w) * .92); top: 0; }
+.hex-3 { left: calc(var(--hex-w) * .46); top: calc(var(--hex-h) * .72); }
+.hex-4 { left: calc(var(--hex-w) * 1.38); top: calc(var(--hex-h) * .72); }
+.hex-1 img { object-position: 58% center; }
+.hex-2 img { object-position: center center; }
+.hex-3 img { object-position: 56% center; }
+.hex-4 img { object-position: 42% center; }
 .about > div > p {
   font-size: 17px;
   line-height: 1.85;
@@ -632,8 +658,9 @@ footer > small {
   .work-side {
     height: 500px;
   }
-  .about-mark {
-    display: none;
+  .about-collage {
+    --hex-w: 200px;
+    margin: 0 auto 20px;
   }
 }
 @media (max-width: 620px) {
@@ -720,6 +747,9 @@ footer > small {
   .contact,
   .about {
     padding: 76px 22px;
+  }
+  .about-collage {
+    --hex-w: clamp(136px, 38vw, 170px);
   }
   .promo-card {
     padding: 28px 22px;
