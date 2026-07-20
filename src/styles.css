@@ -656,6 +656,9 @@ footer > small {
   .hero h1 {
     font-size: 43px;
   }
+  .hero h1 em {
+    font-size: 36px;
+  }
   .hero-copy > p {
     font-size: 17px;
   }
