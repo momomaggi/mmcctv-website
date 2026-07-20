@@ -146,6 +146,7 @@ p {
 .hero h1 em {
   font-style: normal;
   color: var(--purple);
+  font-size: 48px;
 }
 .hero-copy > p {
   max-width: 610px;
