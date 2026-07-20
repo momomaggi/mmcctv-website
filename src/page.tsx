@@ -28,14 +28,14 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero-copy">
-          <div className="eyebrow"><i /> ดูแลครบ ตั้งแต่สำรวจจนถึงหลังการขาย</div>
-          <h1>ติดตั้งอย่างมืออาชีพ<br/><em>ดูแลหลังการขายจริง</em></h1>
-          <p>ระบบกล้องวงจรปิดสำหรับบ้าน ร้านค้า ออฟฟิศ และโรงงาน ออกแบบให้เหมาะกับพื้นที่จริงโดยทีมช่างของเรา</p>
+          <div className="eyebrow"><i /> ดูแลครบตั้งแต่สำรวจหน้างานจนถึงบริการหลังการขาย</div>
+          <h1>ติดตั้งอย่างมืออาชีพ<br/><em>ดูแลหลังการขายอย่างจริงใจ</em></h1>
+          <p>ระบบกล้องวงจรปิดสำหรับบ้าน ร้านค้า ออฟฟิศ หน่วยงานราชการ และโรงงาน ออกแบบให้เหมาะสมกับพื้นที่จริงโดยทีมช่างผู้เชี่ยวชาญของเรา</p>
           <div className="hero-actions">
             <a className="btn primary" href="https://line.me/ti/p/~mmcctv">ปรึกษาทีมช่าง <span>↗</span></a>
             <a className="btn secondary" href="#works">ชมผลงาน <span>↓</span></a>
           </div>
-          <div className="location"><span>●</span> ฉะเชิงเทรา · ปราจีนบุรี · นครนายก และพื้นที่ใกล้เคียง</div>
+          <div className="location"><span>●</span> ฉะเชิงเทรา ปราจีนบุรี นครนายก ชลบุรี สมุทรปราการ และพื้นที่ใกล้เคียง</div>
         </div>
         <div className="hero-visual">
           <div className="purple-block" />
