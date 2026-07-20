@@ -669,6 +669,10 @@ footer > small {
   .hero-visual {
     min-height: 460px;
   }
+  .location {
+    font-size: 12px;
+    line-height: 1.6;
+  }
   .experience {
     padding: 16px 20px;
   }
