@@ -39,7 +39,7 @@ export default function Home() {
         </div>
         <div className="hero-visual">
           <div className="purple-block" />
-          <img src="/hero-installation.webp" alt="ทีมช่าง M&M CCTV กำลังติดตั้งกล้องวงจรปิด" />
+          <img src="/hero-installation-modern.webp" alt="ทีมช่าง M&M CCTV กำลังติดตั้งกล้องวงจรปิดภายในบ้าน" />
           <div className="experience"><strong>10+</strong><span>ปี<br/>ประสบการณ์งานระบบ</span></div>
         </div>
       </section>
