@@ -63,29 +63,7 @@ export default function Home() {
 
       <section className="section works" id="works">
         <div className="section-head"><div><span className="kicker">ผลงานติดตั้ง</span><h2>ความเรียบร้อย<br/>คือส่วนหนึ่งของความปลอดภัย</h2></div><p>เราใส่ใจทั้งตำแหน่งกล้อง แนวเดินสาย ตู้เก็บอุปกรณ์ และการตั้งค่าระบบ เพื่อให้งานใช้งานง่ายและดูดีไปพร้อมกัน</p></div>
-        <div className="work-grid">
-  <div className="work-main">
-    <img
-      src="/portfolio-home.webp"
-      alt="ผลงานติดตั้งกล้องวงจรปิดภายในบ้านโดย M&M CCTV"
-      loading="lazy"
-    />
-    <span>บ้านพักอาศัยและร้านค้า</span>
-    <h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3>
-  </div>
-
-  <div className="work-side">
-    <div>
-      <span>โรงงานและโกดัง</span>
-      <h3>ระบบกล้องพร้อมตู้ควบคุม</h3>
-    </div>
-
-    <div>
-      <span>สำนักงาน</span>
-      <h3>ระบบสแกนใบหน้าเข้า–ออก</h3>
-    </div>
-  </div>
-</div>
+        <div className="work-grid"><div className="work-main"><span>บ้านพักอาศัย</span><h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3></div><div className="work-side"><div><span>โรงงานและโกดัง</span><h3>ระบบกล้องพร้อมตู้ควบคุม</h3></div><div><span>สำนักงาน</span><h3>ระบบสแกนใบหน้าเข้า–ออก</h3></div></div></div>
       </section>
 
       <section className="about" id="about">
