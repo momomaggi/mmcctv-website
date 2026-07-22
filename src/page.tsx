@@ -64,7 +64,6 @@ export default function Home() {
       <section className="section works" id="works">
         <div className="section-head"><div><span className="kicker">ผลงานติดตั้ง</span><h2>ความเรียบร้อย<br/>คือส่วนหนึ่งของความปลอดภัย</h2></div><p>เราใส่ใจทั้งตำแหน่งกล้อง แนวเดินสาย ตู้เก็บอุปกรณ์ และการตั้งค่าระบบ เพื่อให้งานใช้งานง่ายและดูดีไปพร้อมกัน</p></div>
         <div className="work-grid">
-        <div className="work-grid">
   <div className="work-main">
     <img
       src="/portfolio-home.webp"
