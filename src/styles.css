@@ -634,7 +634,7 @@ footer > small {
     min-height: 520px;
   }
   .hero-visual > img {
-  object-position: 38% center;
+  object-position: 100% center;
   }
   .hero-visual:before {
     display: none;
