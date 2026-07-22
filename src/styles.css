@@ -633,6 +633,9 @@ footer > small {
   .hero-visual {
     min-height: 520px;
   }
+  .hero-visual > img {
+  object-position: 38% center;
+  }
   .hero-visual:before {
     display: none;
   }
@@ -703,6 +706,9 @@ footer > small {
   }
   .hero-visual {
     min-height: 460px;
+  }
+  .hero-visual > img {
+  object-position: 35% center;
   }
   .location {
     font-size: 12px;
