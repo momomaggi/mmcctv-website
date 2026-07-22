@@ -79,7 +79,7 @@ export default function Home() {
 
       <section className="contact" id="contact">
         <div><span className="kicker light">เริ่มต้นคุยกับเรา</span><h2>มีพื้นที่อยู่แล้ว<br/>ให้เราช่วยวางระบบ</h2><p>ส่งรูปหน้างานหรือแชร์โลเคชั่นผ่าน LINE ทีมงานช่วยประเมินเบื้องต้นและแนะนำชุดที่เหมาะสมให้ฟรี</p></div>
-        <div className="contact-card"><small>LINE OFFICIAL / LINE ID</small><strong>@mmcctv</strong><a className="btn white" href="https://line.me/ti/p/~mmcctv">ทัก LINE ตอนนี้ <span>↗</span></a><p>เวลาทำการ จันทร์–ศุกร์ 08.30–16.30 น.</p></div>
+        <div className="contact-card"><small>LINE OFFICIAL / LINE ID</small><strong>mmcctv</strong><a className="btn white" href="https://line.me/ti/p/~mmcctv">ทัก LINE ตอนนี้ <span>↗</span></a><p>เวลาทำการ จันทร์–ศุกร์ 08.30–16.30 น.</p></div>
       </section>
 
       <footer><a className="footer-brand" href="#top"><img src="/logo-mm-cctv.webp" alt=""/><span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span></a><p>รับติดตั้งและดูแลระบบรักษาความปลอดภัยครบวงจร</p><div><a href="#services">บริการ</a><a href="#works">ผลงาน</a><a href="#contact">ติดต่อเรา</a></div><small>© 2026 M&amp;M CCTV · บริษัท แม็กมอส อินโนเวชั่น จำกัด</small></footer>
