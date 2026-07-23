@@ -120,11 +120,13 @@ export default function Home() {
       </section>
 
       <section className="about" id="about">
-        <div className="about-collage" aria-label="ภาพผลงานติดตั้งจริงของทีม M&M CCTV">
-          <figure className="hex hex-1"><img src="/about-collage/01-install-wall-premium.webp" alt="ช่าง M&M CCTV ติดตั้งระบบเดินสาย" loading="lazy"/></figure>
-          <figure className="hex hex-2"><img src="/about-collage/02-install-close-premium.webp" alt="ช่างติดตั้งอุปกรณ์รักษาความปลอดภัย" loading="lazy"/></figure>
-          <figure className="hex hex-3"><img src="/about-collage/03-system-rack-premium.webp" alt="ช่างตรวจเช็กระบบกล้องวงจรปิด" loading="lazy"/></figure>
-          <figure className="hex hex-4"><img src="/about-collage/04-ladder-outdoor-premium.webp" alt="ช่างติดตั้งกล้องวงจรปิดภายนอกอาคาร" loading="lazy"/></figure>
+       <div className="about-visual">
+  <img
+    src="/about-visual.webp"
+    alt="ทีมช่าง M&M CCTV ติดตั้งและตรวจสอบระบบรักษาความปลอดภัย"
+    loading="lazy"
+  />
+</div>
         </div><div><span className="kicker">รู้จัก M&amp;M CCTV</span><h2>ขายความมั่นใจ<br/>ไม่ใช่แค่ขายกล้อง</h2><p>M&amp;M CCTV ให้บริการระบบรักษาความปลอดภัยครบวงจร โดยบริษัท แม็กมอส อินโนเวชั่น จำกัด เราเชื่อว่างานติดตั้งที่ดีต้องเริ่มจากคำแนะนำที่ตรงไปตรงมา จบงานเรียบร้อย และยังติดต่อกันได้เมื่อลูกค้าต้องการความช่วยเหลือ</p><div className="about-facts"><div><strong>ครบวงจร</strong><span>สำรวจ · ออกแบบ · ติดตั้ง · ดูแล</span></div><div><strong>ทีมงานในพื้นที่</strong><span>เข้าบริการได้รวดเร็วกว่า</span></div></div></div>
       </section>
 
