@@ -425,14 +425,7 @@ p {
 }
 .work-main:after,
 .work-side > div:after {
-  content: "ภาพผลงานจริงจะนำมาแสดงบริเวณนี้";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: #756b76;
-  font-size: 13px;
-  letter-spacing: 0.05em;
+  content: none;
 }
 .work-grid span,
 .work-grid h3 {
