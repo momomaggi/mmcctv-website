@@ -635,6 +635,7 @@ footer > small {
  .about-visual {
   margin: 0 auto 20px;
   }
+}
 @media (max-width: 620px) {
   .site-header {
     height: 74px;
