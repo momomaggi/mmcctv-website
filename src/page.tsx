@@ -63,7 +63,60 @@ export default function Home() {
 
       <section className="section works" id="works">
         <div className="section-head"><div><span className="kicker">ผลงานติดตั้ง</span><h2>ความเรียบร้อย<br/>คือส่วนหนึ่งของความปลอดภัย</h2></div><p>เราใส่ใจทั้งตำแหน่งกล้อง แนวเดินสาย ตู้เก็บอุปกรณ์ และการตั้งค่าระบบ เพื่อให้งานใช้งานง่ายและดูดีไปพร้อมกัน</p></div>
-        <div className="work-grid"><div className="work-main"><span>บ้านพักอาศัยและร้านค้า</span><h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3></div><div className="work-side"><div><span>สำนักงานและหน่วยงานราชการ</span><h3>เครื่องสแกนนิ้ว-ใบหน้า พร้อมกลอนแม่เหล็กไฟฟ้า</h3></div><div><span>โรงงาน, คอนโด, โครงการหมู่บ้าน</span><h3>ระบบไม้กั้นรถยนต์พร้อมกล้อง Ai อ่านป้ายทะเบียน</h3></div></div></div>
+        <div className="work-grid">
+  <div className="work-main">
+    <picture>
+      <source
+        media="(max-width: 620px)"
+        srcSet="/portfolio/portfolio-home-mobile.webp"
+      />
+      <img
+        src="/portfolio/portfolio-home.webp"
+        alt="ผลงานติดตั้งกล้องวงจรปิดสำหรับบ้านและร้านค้า"
+        loading="lazy"
+      />
+    </picture>
+
+    <span>บ้านพักอาศัยและร้านค้า</span>
+    <h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3>
+  </div>
+
+  <div className="work-side">
+    <div>
+      <picture>
+        <source
+          media="(max-width: 620px)"
+          srcSet="/portfolio/portfolio-access-mobile.webp"
+        />
+        <img
+          src="/portfolio/portfolio-access.webp"
+          alt="ผลงานติดตั้งเครื่องสแกนใบหน้าและระบบควบคุมประตู"
+          loading="lazy"
+        />
+      </picture>
+
+      <span>สำนักงานและหน่วยงานราชการ</span>
+      <h3>เครื่องสแกนนิ้ว-ใบหน้า พร้อมกลอนแม่เหล็กไฟฟ้า</h3>
+    </div>
+
+    <div>
+      <picture>
+        <source
+          media="(max-width: 620px)"
+          srcSet="/portfolio/portfolio-barrier-mobile.webp"
+        />
+        <img
+          src="/portfolio/portfolio-barrier.webp"
+          alt="ผลงานติดตั้งไม้กั้นรถยนต์"
+          loading="lazy"
+        />
+      </picture>
+
+      <span>โรงงาน คอนโด และโครงการหมู่บ้าน</span>
+      <h3>ระบบไม้กั้นรถยนต์พร้อมกล้อง AI อ่านป้ายทะเบียน</h3>
+    </div>
+  </div>
+</div>
       </section>
 
       <section className="about" id="about">
