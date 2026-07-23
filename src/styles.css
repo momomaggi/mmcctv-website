@@ -559,6 +559,9 @@ footer {
 .footer-brand strong {
   font-size: 18px;
 }
+.footer-brand small {
+  color: #ffffff;
+}
 footer > p {
   color: #ab9caf;
   font-size: 13px;
