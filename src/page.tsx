@@ -63,32 +63,32 @@ const reviews = [
   {
     name: "K S (Mol)",
     text: "ช่างให้คำแนะนำดีครับ สินค้ามีให้เลือกหลายรุ่น มีหลายราคาให้เลือก การติดตั้งเรียบร้อยดีครับ",
-    link: "https://maps.app.goo.gl/R1uzCYeWTbxh5R567",
+    link: "https://maps.app.goo.gl/LXdjwPkrMGSPtiry9",
   },
   {
     name: "supong chardpadid",
     text: "เป็นลูกค้ามา 3 ปี บริการหลังการขายประทับใจมากครับ แนะนำเลยครับ",
-    link: "https://maps.app.goo.gl/gNtxUSAWULQMHrDj9",
+    link: "https://maps.app.goo.gl/WJXdgDq9n3SuDuTeA",
   },
   {
     name: "NariChanel",
     text: "พี่ขอบคุณมากนะคะ สำหรับติดตั้งความปลอดภัยให้ที่บ้าน ตอนนี้อุ่นใจมากเลย น้อง ๆ ทำงานดีมาก ทำงานละเอียดเรียบร้อยมาก ติดตั้งดี คุณภาพดี กล้องชัดมาก ขอแนะนำค่ะ",
-    link: "https://maps.app.goo.gl/bhX7Qbgwcdns7zvV6",
+    link: "https://maps.app.goo.gl/PFLks5VJMDEkujFx9",
   },
   {
     name: "Wilaitip Punyota",
     text: "ทำงานเรียบร้อยมาก ทั้งเดินสายไฟ เก็บสายไฟ รอยต่อดีมาก มืออาชีพเลยค่ะ มาตรงเวลา พูดจาสุภาพ อธิบายการทำงานของกล้องวงจรปิดได้ละเอียดและชัดเจนดีมาก โดยรวมประทับใจมากค่ะ",
-    link: "https://maps.app.goo.gl/PFLks5VJMDEkujFx9",
+    link: "https://maps.app.goo.gl/bhX7Qbgwcdns7zvV6",
   },
   {
     name: "narissara tumma",
     text: "บริการดีมากค่ะ สุภาพ ตอบคำถามได้ละเอียด การติดตั้งตรงเวลา และใส่ใจทุกขั้นตอน แนะนำค่ะ",
-    link: "https://maps.app.goo.gl/WJXdgDq9n3SuDuTeA",
+    link: "https://maps.app.goo.gl/gNtxUSAWULQMHrDj9",
   },
   {
     name: "tonao Tira",
     text: "บริการดีเยี่ยม งานคุณภาพ รวดเร็ว งานเรียบร้อย",
-    link: "https://maps.app.goo.gl/LXdjwPkrMGSPtiry9",
+    link: "https://maps.app.goo.gl/PS8oYMv6Ade9c7696",
   },
 ];
 export default function Home() {
