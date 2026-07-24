@@ -59,6 +59,18 @@ const steps = [
     "/process-icons/process-04-install.png",
   ],
 ];
+const brands = [
+  { name: "Hikvision", src: "/brands/brand-hikvision.webp" },
+  { name: "HiLook", src: "/brands/brand-hilook.webp" },  
+  { name: "Dahua", src: "/brands/brand-dahua.webp" },
+  { name: "VIGI", src: "/brands/brand-vigi.webp" },
+  { name: "Tiandy", src: "/brands/brand-tiandy.webp" },  
+  { name: "EZVIZ", src: "/brands/brand-ezviz.webp" },
+  { name: "IMOU", src: "/brands/brand-imou.webp" },
+  { name: "ZKTeco", src: "/brands/brand-zkteco.webp" },
+  { name: "HIP", src: "/brands/brand-hip.webp" },
+  { name: "Ruijie Reyee", src: "/brands/brand-ruijie.webp" },
+];
 const reviews = [
   {
     name: "K S (Mol)",
@@ -223,7 +235,26 @@ const scrollReviews = (direction: "previous" | "next") => {
         <div><strong>รับประกันสินค้า</strong><span>สูงสุด 3 ปี ตามเงื่อนไข</span></div>
         <div><strong>บริการหลังการขาย</strong><span>ติดต่อทีมงานได้ ไม่ทิ้งงาน</span></div>
       </section>
+<section
+  className="brand-strip"
+  aria-labelledby="brand-strip-title"
+>
+  <p id="brand-strip-title">
+    แบรนด์สินค้าที่เราคัดเลือกและมีจำหน่าย
+  </p>
 
+  <div className="brand-logos">
+    {brands.map((brand) => (
+      <div className="brand-logo" key={brand.name}>
+        <img
+          src={brand.src}
+          alt={`โลโก้ ${brand.name}`}
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+</section>
       <section className="section services" id="services">
         <div className="section-head"><div><span className="kicker">บริการของเรา</span><h2>ระบบรักษาความปลอดภัย<br/>ที่ออกแบบให้เหมาะกับคุณ</h2></div><p>เราไม่ได้เริ่มจากการขายอุปกรณ์ แต่เริ่มจากการทำความเข้าใจพื้นที่ เพื่อให้ได้ระบบที่ใช้งานจริงและดูแลง่ายในระยะยาว</p></div>
         <div className="service-grid">{services.map((s)=><article key={s.no}><img className="service-image" src={s.image} alt={s.title} loading="lazy"/><span className="number">{s.no}</span><h3>{s.title}</h3><p>{s.text}</p><a href="#contact">ดูรายละเอียด <b>↗</b></a></article>)}</div>
