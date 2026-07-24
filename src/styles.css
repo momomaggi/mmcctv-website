@@ -355,15 +355,16 @@ p {
 .contact {
   background:
     radial-gradient(
-      circle at 78% 18%,
-      rgba(114, 87, 181, 0.18),
-      transparent 35%
+      circle at 72% 22%,
+      rgba(137, 74, 170, 0.42) 0%,
+      rgba(90, 28, 112, 0.18) 28%,
+      transparent 52%
     ),
     linear-gradient(
-      180deg,
-      #3b0a4a 0%,
-      #3f0d50 55%,
-      #2d0738 100%
+      135deg,
+      #270430 0%,
+      #4a0d5c 48%,
+      #31053e 100%
     );
 }
 .promo {
