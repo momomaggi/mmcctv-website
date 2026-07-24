@@ -96,6 +96,21 @@ export default function Home() {
   const [promoPaused, setPromoPaused] = useState(false);
   const promoTouchStart = useRef<number | null>(null);
   const reviewsTrackRef = useRef<HTMLDivElement | null>(null);
+  
+  const trackLineClick = (linkLocation: string) => {
+  const analyticsWindow = window as typeof window & {
+    gtag?: (
+      command: "event",
+      eventName: string,
+      parameters?: Record<string, string>
+    ) => void;
+  };
+
+  analyticsWindow.gtag?.("event", "line_contact_click", {
+    link_location: linkLocation,
+  });
+};
+  
   const showPreviousPromo = () => {
     setPromoIndex(
       (current) =>
@@ -169,7 +184,13 @@ const scrollReviews = (direction: "previous" | "next") => {
         <nav aria-label="เมนูหลัก">
           <a href="#services">บริการ</a><a href="#promotions">โปรโมชั่น</a><a href="#works">ผลงาน</a><a href="#about">เกี่ยวกับเรา</a><a href="#contact">ติดต่อเรา</a>
         </nav>
-        <a className="header-cta" href="https://line.me/ti/p/~mmcctv">ปรึกษาทีมช่าง <span>↗</span></a>
+        <a
+  className="header-cta"
+  href="https://line.me/ti/p/~mmcctv"
+  onClick={() => trackLineClick("header")}
+>
+  ปรึกษาทีมช่าง <span>↗</span>
+</a>
       </header>
 
       <section className="hero" id="top">
@@ -178,7 +199,13 @@ const scrollReviews = (direction: "previous" | "next") => {
           <h1>ติดตั้งอย่างมืออาชีพ<br/><em>ดูแลหลังการขายอย่างจริงใจ</em></h1>
           <p>ระบบกล้องวงจรปิดสำหรับบ้าน ร้านค้า ออฟฟิศ หน่วยงานราชการ และโรงงาน ออกแบบให้เหมาะสมกับพื้นที่จริงโดยทีมช่างผู้เชี่ยวชาญของเรา</p>
           <div className="hero-actions">
-            <a className="btn primary" href="https://line.me/ti/p/~mmcctv">ปรึกษาทีมช่าง <span>↗</span></a>
+            <a
+  className="btn primary"
+  href="https://line.me/ti/p/~mmcctv"
+  onClick={() => trackLineClick("hero")}
+>
+  ปรึกษาทีมช่าง <span>↗</span>
+</a>
             <a className="btn secondary" href="#works">ชมผลงาน <span>↓</span></a>
           </div>
           <div className="location"><span>●</span> ฉะเชิงเทรา ปราจีนบุรี นครนายก ชลบุรี สมุทรปราการ และพื้นที่ใกล้เคียง</div>
@@ -215,11 +242,12 @@ const scrollReviews = (direction: "previous" | "next") => {
       ทีมงานช่วยเปรียบเทียบให้ตรงกับพื้นที่ของคุณ
     </p>
     <a
-      className="btn white"
-      href="https://line.me/ti/p/~mmcctv"
-    >
-      ขอรายการโปรโมชั่น <span>↗</span>
-    </a>
+  className="btn white"
+  href="https://line.me/ti/p/~mmcctv"
+  onClick={() => trackLineClick("promotion")}
+>
+  ขอรายการโปรโมชั่น <span>↗</span>
+</a>
   </div>
 
 <div
