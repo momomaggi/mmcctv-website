@@ -784,7 +784,27 @@ p {
   border-right: 1px solid var(--line);
   text-align: center;
 }
+.steps article {
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
 
+.steps article:hover {
+  background: rgba(114, 87, 181, 0.06);
+  transform: translateY(-4px);
+}
+
+.step-icon {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.steps article:hover .step-icon {
+  transform: scale(1.04);
+  box-shadow: 0 14px 30px rgba(59, 10, 74, 0.12);
+}
 .steps article:last-child {
   border-right: 0;
 }
