@@ -574,11 +574,12 @@ const scrollReviews = (direction: "previous" | "next") => {
       </div>
 
       <a
-        className="line-button"
-        href="https://line.me/ti/p/~mmcctv"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+  className="line-button"
+  href="https://line.me/ti/p/~mmcctv"
+  onClick={() => trackLineClick("contact_card")}
+  target="_blank"
+  rel="noopener noreferrer"
+>
         <span>LINE</span>
         ทัก LINE ตอนนี้
         <b>↗</b>
@@ -609,7 +610,14 @@ const scrollReviews = (direction: "previous" | "next") => {
 </section>
 
       <footer><a className="footer-brand" href="#top"><img src="/logo-mm-cctv.webp" alt=""/><span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span></a><p>รับติดตั้งและดูแลระบบรักษาความปลอดภัยครบวงจร</p><div><a href="#services">บริการ</a><a href="#works">ผลงาน</a><a href="#contact">ติดต่อเรา</a></div><small>© 2026 M&amp;M CCTV · ห้างหุ้นส่วนสามัญ เอ็มแอนด์เอ็ม ซีซีทีวี</small></footer>
-      <a className="floating-line" href="https://line.me/ti/p/~mmcctv" aria-label="ติดต่อผ่านไลน์">LINE</a>
+      <a
+  className="floating-line"
+  href="https://line.me/ti/p/~mmcctv"
+  onClick={() => trackLineClick("floating_button")}
+  aria-label="ติดต่อผ่านไลน์"
+>
+  LINE
+</a>
     </main>
   );
 }
