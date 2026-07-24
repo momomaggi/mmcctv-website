@@ -352,6 +352,10 @@ p {
   gap: 100px;
   align-items: center;
 }
+.promo {
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+}
 .kicker.light {
   color: #d9c9e3;
 }
