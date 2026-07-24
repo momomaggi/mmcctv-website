@@ -353,6 +353,14 @@ p {
   align-items: center;
 }
 .contact {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 65px;
+  min-height: 660px;
+  padding-top: 120px;
+  padding-bottom: 120px;
   background:
     radial-gradient(
       circle at 72% 22%,
@@ -367,6 +375,67 @@ p {
       #31053e 100%
     );
 }
+
+.contact > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact::before,
+.contact::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact::before {
+  top: -210px;
+  right: -170px;
+  width: 560px;
+  height: 560px;
+}
+
+.contact::after {
+  right: -310px;
+  bottom: -410px;
+  width: 760px;
+  height: 760px;
+}
+
+.contact-benefits {
+  display: grid;
+  gap: 14px;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.contact-benefits li > span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 27px;
+  height: 27px;
+  border: 1px solid rgba(6, 199, 85, 0.55);
+  border-radius: 50%;
+  background: rgba(6, 199, 85, 0.14);
+  color: #35e379;
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .promo {
   grid-template-columns: 0.8fr 1.2fr;
   gap: 50px;
@@ -722,11 +791,11 @@ p {
 .line-card {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 190px;
+  grid-template-columns: minmax(0, 1fr) 210px;
   align-items: center;
-  gap: 30px;
+  gap: 32px;
   overflow: hidden;
-  padding: 34px;
+  padding: 42px;
   border: 2px solid #06c755;
   border-radius: 22px;
   background: #ffffff;
@@ -871,7 +940,7 @@ p {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 18px 14px;
+  padding: 22px 16px;
   border: 1px solid #e2dee3;
   border-radius: 16px;
   background: #fafafa;
@@ -881,8 +950,8 @@ p {
 
 .line-qr img {
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
 }
 
@@ -1169,9 +1238,18 @@ footer > small {
   .about-facts {
     grid-template-columns: 1fr;
   }
-  .contact-card strong {
-    font-size: 30px;
-  }
+.contact {
+  min-height: auto;
+}
+
+.contact-benefits {
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.contact-benefits li {
+  font-size: 14px;
+}
   footer {
     grid-template-columns: 1fr;
     padding: 45px 22px;
