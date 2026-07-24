@@ -973,25 +973,20 @@ footer > small {
   gap: 16px;
   padding: 22px 20px;
 }
-
 .facebook-icon {
   width: 54px;
   height: 54px;
 }
-
 .facebook-icon svg {
   width: 34px;
   height: 34px;
 }
-
 .facebook-copy strong {
   font-size: 20px;
 }
-
 .facebook-copy > span {
   font-size: 13px;
 }
-
 .facebook-action {
   grid-column: 1 / -1;
   justify-content: center;
