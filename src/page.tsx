@@ -56,10 +56,40 @@ export default function Home() {
         <div className="service-grid">{services.map((s)=><article key={s.no}><img className="service-image" src={s.image} alt={s.title} loading="lazy"/><span className="number">{s.no}</span><h3>{s.title}</h3><p>{s.text}</p><a href="#contact">ดูรายละเอียด <b>↗</b></a></article>)}</div>
       </section>
 
-      <section className="promo" id="promotions">
-        <div><span className="kicker light">โปรโมชั่นแนะนำ</span><h2>เริ่มต้นระบบความปลอดภัย<br/>ในงบที่วางแผนได้</h2><p>ชุดติดตั้งพร้อมอุปกรณ์มาตรฐาน มีหลายแบรนด์และหลายระดับราคา ทีมงานช่วยเปรียบเทียบให้ตรงกับพื้นที่ของคุณ</p><a className="btn white" href="https://line.me/ti/p/~mmcctv">ขอรายการโปรโมชั่น <span>↗</span></a></div>
-        <div className="promo-card"><small>ชุดกล้องวงจรปิดพร้อมติดตั้ง</small><strong>เริ่มต้น <b>13,990</b> บาท</strong><ul><li>กล้องและเครื่องบันทึกครบชุด</li><li>ติดตั้งและตั้งค่าดูผ่านมือถือ</li><li>รับประกันสินค้าและบริการหลังการขาย</li></ul><span className="note">*ราคาขึ้นอยู่กับรุ่น ระยะสาย และสภาพหน้างาน</span></div>
-      </section>
+<section className="promo" id="promotions">
+  <div className="promo-copy">
+    <span className="kicker light">โปรโมชั่นแนะนำ</span>
+    <h2>
+      เริ่มต้นระบบความปลอดภัย
+      <br />
+      ในงบที่วางแผนได้
+    </h2>
+    <p>
+      ชุดติดตั้งพร้อมอุปกรณ์มาตรฐาน มีหลายแบรนด์และหลายระดับราคา
+      ทีมงานช่วยเปรียบเทียบให้ตรงกับพื้นที่ของคุณ
+    </p>
+    <a
+      className="btn white"
+      href="https://line.me/ti/p/~mmcctv"
+    >
+      ขอรายการโปรโมชั่น <span>↗</span>
+    </a>
+  </div>
+
+  <div className="promo-media">
+    <picture>
+      <source
+        media="(max-width: 620px)"
+        srcSet="/promotions/promo-01-mobile.webp"
+      />
+      <img
+        src="/promotions/promo-01.webp"
+        alt="โปรโมชั่นติดตั้งระบบรักษาความปลอดภัย M&M CCTV"
+        loading="lazy"
+      />
+    </picture>
+  </div>
+</section>
 
       <section className="section works" id="works">
         <div className="section-head"><div><span className="kicker">ผลงานติดตั้ง</span><h2>ความเรียบร้อย<br/>คือส่วนหนึ่งของความปลอดภัย</h2></div><p>เราใส่ใจทั้งตำแหน่งกล้อง แนวเดินสาย ตู้เก็บอุปกรณ์ และการตั้งค่าระบบ เพื่อให้งานใช้งานง่ายและดูดีไปพร้อมกัน</p></div>
