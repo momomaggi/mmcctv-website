@@ -59,6 +59,38 @@ const steps = [
     "/process-icons/process-04-install.png",
   ],
 ];
+const reviews = [
+  {
+    name: "K S (Mol)",
+    text: "ช่างให้คำแนะนำดีครับ สินค้ามีให้เลือกหลายรุ่น มีหลายราคาให้เลือก การติดตั้งเรียบร้อยดีครับ",
+    link: "https://maps.app.goo.gl/R1uzCYeWTbxh5R567",
+  },
+  {
+    name: "supong chardpadid",
+    text: "เป็นลูกค้ามา 3 ปี บริการหลังการขายประทับใจมากครับ แนะนำเลยครับ",
+    link: "https://maps.app.goo.gl/gNtxUSAWULQMHrDj9",
+  },
+  {
+    name: "NariChanel",
+    text: "พี่ขอบคุณมากนะคะ สำหรับติดตั้งความปลอดภัยให้ที่บ้าน ตอนนี้อุ่นใจมากเลย น้อง ๆ ทำงานดีมาก ทำงานละเอียดเรียบร้อยมาก ติดตั้งดี คุณภาพดี กล้องชัดมาก ขอแนะนำค่ะ",
+    link: "https://maps.app.goo.gl/bhX7Qbgwcdns7zvV6",
+  },
+  {
+    name: "Wilaitip Punyota",
+    text: "ทำงานเรียบร้อยมาก ทั้งเดินสายไฟ เก็บสายไฟ รอยต่อดีมาก มืออาชีพเลยค่ะ มาตรงเวลา พูดจาสุภาพ อธิบายการทำงานของกล้องวงจรปิดได้ละเอียดและชัดเจนดีมาก โดยรวมประทับใจมากค่ะ",
+    link: "https://maps.app.goo.gl/PFLks5VJMDEkujFx9",
+  },
+  {
+    name: "narissara tumma",
+    text: "บริการดีมากค่ะ สุภาพ ตอบคำถามได้ละเอียด การติดตั้งตรงเวลา และใส่ใจทุกขั้นตอน แนะนำค่ะ",
+    link: "https://maps.app.goo.gl/WJXdgDq9n3SuDuTeA",
+  },
+  {
+    name: "tonao Tira",
+    text: "บริการดีเยี่ยม งานคุณภาพ รวดเร็ว งานเรียบร้อย",
+    link: "https://maps.app.goo.gl/LXdjwPkrMGSPtiry9",
+  },
+];
 export default function Home() {
   const [promoIndex, setPromoIndex] = useState(0);
   const [promoPaused, setPromoPaused] = useState(false);
@@ -345,7 +377,79 @@ export default function Home() {
     ))}
   </div>
 </section>
+<section className="section reviews" id="reviews">
+  <div className="reviews-head">
+    <div>
+      <span className="kicker">เสียงจากลูกค้าจริง</span>
+      <h2>
+        ความประทับใจที่ลูกค้า
+        <br />
+        บอกต่อบน Google
+      </h2>
+    </div>
 
+    <div className="google-rating">
+      <span className="google-mark" aria-hidden="true">
+        G
+      </span>
+
+      <div>
+        <strong>5 ดาว</strong>
+        <span className="review-stars" aria-label="คะแนน 5 ดาว">
+          ★★★★★
+        </span>
+        <small>รีวิวจริงจาก Google</small>
+      </div>
+    </div>
+  </div>
+
+  <div className="reviews-track">
+    {reviews.map((review) => (
+      <a
+        className="review-card"
+        href={review.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        key={review.name}
+        aria-label={`อ่านรีวิวของ ${review.name} บน Google`}
+      >
+        <div className="review-top">
+          <span className="review-avatar" aria-hidden="true">
+            {review.name.charAt(0).toUpperCase()}
+          </span>
+
+          <div>
+            <strong>{review.name}</strong>
+            <span>Google Review</span>
+          </div>
+
+          <b aria-hidden="true">↗</b>
+        </div>
+
+        <div className="review-stars" aria-label="คะแนน 5 ดาว">
+          ★★★★★
+        </div>
+
+        <p>“{review.text}”</p>
+
+        <span className="review-source">
+          อ่านรีวิวต้นฉบับบน Google
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <div className="review-actions">
+    <a
+      className="btn primary"
+      href="https://g.page/r/CavXfdQlcXWiEAI/review"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      เขียนรีวิวให้เรา <span>↗</span>
+    </a>
+  </div>
+</section>
       <section className="contact" id="contact">
   <div className="contact-copy">
     <span className="kicker light">เริ่มต้นคุยกับเรา</span>
