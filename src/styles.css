@@ -393,6 +393,24 @@ p {
   font-size: 11px;
   color: var(--muted);
 }
+.promo-media {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  background: #f4edf7;
+}
+
+.promo-media picture,
+.promo-media img {
+  display: block;
+  width: 100%;
+}
+
+.promo-media img {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
 .works {
   background: #fff;
 }
@@ -740,6 +758,9 @@ footer > small {
   }
   .promo-card > strong b {
     font-size: 40px;
+  }
+  .promo-media img {
+  aspect-ratio: 4 / 5;
   }
   .work-main {
     height: 330px;
