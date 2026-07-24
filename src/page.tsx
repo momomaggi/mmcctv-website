@@ -34,10 +34,30 @@ const services = [
   { no: "04", image: "/service-previews/04-ma-maintenance-hospital-factory-v2.webp", title: "บริการดูแลระบบ MA", text: "ตรวจเช็ก บำรุงรักษา และแก้ไขปัญหาระบบเดิม พร้อมรายงานผลโดยทีมช่าง" },
 ];
 const steps = [
-  ["01", "คุยความต้องการ", "บอกลักษณะพื้นที่ จำนวนจุด และงบประมาณคร่าว ๆ"],
-  ["02", "สำรวจหน้างาน", "ทีมช่างเข้าตรวจพื้นที่ วางตำแหน่งและระบบเดินสาย"],
-  ["03", "เสนอราคา", "แจกแจงอุปกรณ์และค่าติดตั้งชัดเจนก่อนเริ่มงาน"],
-  ["04", "ติดตั้งและสอนใช้งาน", "ส่งมอบงานเรียบร้อย พร้อมตั้งค่าดูผ่านมือถือ"],
+  [
+    "01",
+    "คุยความต้องการ",
+    "บอกลักษณะพื้นที่ จำนวนจุด และงบประมาณคร่าว ๆ",
+    "/process-icons/process-01-discuss.png",
+  ],
+  [
+    "02",
+    "สำรวจหน้างาน",
+    "ทีมช่างเข้าตรวจพื้นที่ วางตำแหน่งและระบบเดินสาย",
+    "/process-icons/process-02-survey.png",
+  ],
+  [
+    "03",
+    "เสนอราคา",
+    "แจกแจงอุปกรณ์และค่าติดตั้งชัดเจนก่อนเริ่มงาน",
+    "/process-icons/process-03-quote.png",
+  ],
+  [
+    "04",
+    "ติดตั้งและสอนใช้งาน",
+    "ส่งมอบงานเรียบร้อย พร้อมตั้งค่าดูผ่านมือถือ",
+    "/process-icons/process-04-install.png",
+  ],
 ];
 export default function Home() {
   const [promoIndex, setPromoIndex] = useState(0);
@@ -301,7 +321,30 @@ export default function Home() {
       <div><span className="kicker">รู้จัก M&amp;M CCTV</span><h2>ขายความมั่นใจ<br/>ไม่ใช่แค่ขายกล้อง</h2><p>M&amp;M CCTV ให้บริการระบบรักษาความปลอดภัยครบวงจร โดยห้างหุ้นส่วนสามัญ เอ็มแอนด์เอ็ม ซีซีทีวี เราเชื่อว่างานติดตั้งที่ดีต้องเริ่มจากคำแนะนำที่ตรงไปตรงมา จบงานเรียบร้อย และยังติดต่อกันได้เมื่อลูกค้าต้องการความช่วยเหลือ</p><div className="about-facts"><div><strong>ครบวงจร</strong><span>สำรวจ · ออกแบบ · ติดตั้ง · ดูแล</span></div><div><strong>ทีมงานในพื้นที่</strong><span>เข้าบริการได้รวดเร็วกว่า</span></div></div></div>
       </section>
 
-      <section className="section process"><span className="kicker">ขั้นตอนการทำงาน</span><h2>ง่าย ชัดเจน และรู้ราคาก่อนติดตั้ง</h2><div className="steps">{steps.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></section>
+      <section className="section process">
+  <span className="kicker">ขั้นตอนการทำงาน</span>
+
+  <h2>ง่าย ชัดเจน และรู้ราคาก่อนติดตั้ง</h2>
+
+  <div className="steps">
+    {steps.map(([number, title, description, icon]) => (
+      <article key={number}>
+        <span className="step-number">{number}</span>
+
+        <div className="step-icon">
+          <img
+            src={icon}
+            alt=""
+            loading="lazy"
+          />
+        </div>
+
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </article>
+    ))}
+  </div>
+</section>
 
       <section className="contact" id="contact">
   <div className="contact-copy">
