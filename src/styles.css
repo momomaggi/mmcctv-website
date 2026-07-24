@@ -546,6 +546,49 @@ p {
   bottom: 24px;
   font-size: 16px;
 }
+.facebook-works {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 32px;
+  padding: 30px 34px;
+  border: 1px solid var(--line);
+  background: var(--lavender);
+}
+
+.facebook-works > div > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--violet);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.facebook-works h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.facebook-works p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.facebook-works > a {
+  flex-shrink: 0;
+  padding: 16px 22px;
+  background: var(--purple);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.facebook-works > a span {
+  margin-left: 12px;
+}
 .about {
   display: grid;
   grid-template-columns: minmax(430px, 0.9fr) 1.1fr;
@@ -888,6 +931,21 @@ footer > small {
     width: 52px;
     height: 52px;
   }
+  .facebook-works {
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 22px;
+  padding: 26px 22px;
+}
+
+.facebook-works h3 {
+  font-size: 21px;
+}
+
+.facebook-works > a {
+  width: 100%;
+  text-align: center;
+}
 }
 @media (prefers-reduced-motion: reduce) {
   html {
