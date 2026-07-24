@@ -352,6 +352,20 @@ p {
   gap: 100px;
   align-items: center;
 }
+.contact {
+  background:
+    radial-gradient(
+      circle at 78% 18%,
+      rgba(114, 87, 181, 0.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #3b0a4a 0%,
+      #3f0d50 55%,
+      #2d0738 100%
+    );
+}
 .promo {
   grid-template-columns: 0.8fr 1.2fr;
   gap: 50px;
