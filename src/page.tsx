@@ -317,6 +317,22 @@ export default function Home() {
       ส่งรูปหน้างานหรือแชร์โลเคชั่นผ่าน LINE
       ทีมงานช่วยประเมินเบื้องต้นและแนะนำชุดที่เหมาะสมให้ฟรี
     </p>
+    <ul className="contact-benefits">
+  <li>
+    <span aria-hidden="true">✓</span>
+    ประเมินหน้างานเบื้องต้นฟรี
+  </li>
+
+  <li>
+    <span aria-hidden="true">✓</span>
+    แนะนำอุปกรณ์ให้เหมาะกับพื้นที่
+  </li>
+
+  <li>
+    <span aria-hidden="true">✓</span>
+    ติดต่อทีมงานในพื้นที่ได้โดยตรง
+  </li>
+</ul>
   </div>
 
   <div className="contact-card line-card">
