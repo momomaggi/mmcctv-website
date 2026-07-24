@@ -1491,6 +1491,35 @@ footer > small {
   .brand small {
     font-size: 6px;
   }
+  .brand-strip {
+  padding: 22px 0 18px;
+  overflow: hidden;
+}
+
+.brand-strip > p {
+  padding: 0 22px;
+  margin-bottom: 14px;
+  text-align: left;
+}
+
+.brand-logos {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  padding: 0 22px 10px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.brand-logos::-webkit-scrollbar {
+  display: none;
+}
+
+.brand-logo {
+  flex: 0 0 112px;
+  height: 58px;
+  scroll-snap-align: start;
+}
   .header-cta {
     padding: 9px 12px;
     font-size: 12px;
