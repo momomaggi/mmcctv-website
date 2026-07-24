@@ -229,7 +229,6 @@ export default function Home() {
     <span>บ้านพักอาศัยและร้านค้า</span>
     <h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3>
   </div>
-
   <div className="work-side">
     <div>
       <picture>
@@ -243,11 +242,9 @@ export default function Home() {
           loading="lazy"
         />
       </picture>
-
       <span>สำนักงานและหน่วยงานราชการ</span>
       <h3>เครื่องสแกนนิ้ว-ใบหน้า พร้อมกลอนแม่เหล็กไฟฟ้า</h3>
     </div>
-
     <div>
       <picture>
         <source
@@ -265,6 +262,23 @@ export default function Home() {
       <h3>ระบบไม้กั้นรถยนต์พร้อมกล้อง AI อ่านป้ายทะเบียน</h3>
     </div>
   </div>
+</div>
+        <div className="facebook-works">
+  <div>
+    <span>อัปเดตผลงานทุกสัปดาห์</span>
+    <h3>ดูผลงานติดตั้งล่าสุดบน Facebook</h3>
+    <p>
+      ติดตามภาพหน้างานจริง งานติดตั้งใหม่ และอัปเดตจากทีมช่าง M&amp;M CCTV
+    </p>
+  </div>
+
+  <a
+    href="https://www.facebook.com/mmcctv.sales"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    ดูผลงานเพิ่มเติมบน Facebook <span>↗</span>
+  </a>
 </div>
       </section>
 
