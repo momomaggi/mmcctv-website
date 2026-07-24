@@ -304,9 +304,68 @@ export default function Home() {
       <section className="section process"><span className="kicker">ขั้นตอนการทำงาน</span><h2>ง่าย ชัดเจน และรู้ราคาก่อนติดตั้ง</h2><div className="steps">{steps.map(([n,t,d])=><article key={n}><span>{n}</span><h3>{t}</h3><p>{d}</p></article>)}</div></section>
 
       <section className="contact" id="contact">
-        <div><span className="kicker light">เริ่มต้นคุยกับเรา</span><h2>มีพื้นที่อยู่แล้ว<br/>ให้เราช่วยวางระบบ</h2><p>ส่งรูปหน้างานหรือแชร์โลเคชั่นผ่าน LINE ทีมงานช่วยประเมินเบื้องต้นและแนะนำชุดที่เหมาะสมให้ฟรี</p></div>
-        <div className="contact-card"><small>LINE OFFICIAL / LINE ID</small><strong>mmcctv</strong><a className="btn white" href="https://line.me/ti/p/~mmcctv">ทัก LINE ตอนนี้ <span>↗</span></a><p>เวลาทำการ จันทร์–ศุกร์ 08.30–16.30 น.</p></div>
-      </section>
+  <div className="contact-copy">
+    <span className="kicker light">เริ่มต้นคุยกับเรา</span>
+
+    <h2>
+      มีพื้นที่อยู่แล้ว
+      <br />
+      ให้เราช่วยวางระบบ
+    </h2>
+
+    <p>
+      ส่งรูปหน้างานหรือแชร์โลเคชั่นผ่าน LINE
+      ทีมงานช่วยประเมินเบื้องต้นและแนะนำชุดที่เหมาะสมให้ฟรี
+    </p>
+  </div>
+
+  <div className="contact-card line-card">
+    <div className="line-card-info">
+      <div className="line-card-head">
+        <span className="line-logo" aria-hidden="true">
+          LINE
+        </span>
+
+        <div>
+          <small>LINE OFFICIAL / LINE ID</small>
+          <strong>mmcctv</strong>
+        </div>
+      </div>
+
+      <a
+        className="line-button"
+        href="https://line.me/ti/p/~mmcctv"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span>LINE</span>
+        ทัก LINE ตอนนี้
+        <b>↗</b>
+      </a>
+
+      <p className="line-note">
+        ส่งรูปหน้างานหรือแชร์โลเคชั่นผ่าน LINE
+        เพื่อให้ทีมงานประเมินเบื้องต้นได้ฟรี
+      </p>
+
+      <p className="line-hours">
+        <span aria-hidden="true">◷</span>
+        เวลาทำการ จันทร์–ศุกร์ 08.30–16.30 น.
+      </p>
+    </div>
+
+    <div className="line-qr">
+      <img
+        src="/line-mmcctv-qr.png"
+        alt="QR Code สำหรับเพิ่ม LINE M&M CCTV"
+        loading="lazy"
+      />
+
+      <strong>สแกน QR</strong>
+      <span>เพื่อเริ่มแชตได้ทันที</span>
+    </div>
+  </div>
+</section>
 
       <footer><a className="footer-brand" href="#top"><img src="/logo-mm-cctv.webp" alt=""/><span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span></a><p>รับติดตั้งและดูแลระบบรักษาความปลอดภัยครบวงจร</p><div><a href="#services">บริการ</a><a href="#works">ผลงาน</a><a href="#contact">ติดต่อเรา</a></div><small>© 2026 M&amp;M CCTV · บริษัท แม็กมอส อินโนเวชั่น จำกัด</small></footer>
       <a className="floating-line" href="https://line.me/ti/p/~mmcctv" aria-label="ติดต่อผ่านไลน์">LINE</a>
