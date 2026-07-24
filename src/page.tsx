@@ -263,23 +263,31 @@ export default function Home() {
     </div>
   </div>
 </div>
-        <div className="facebook-works">
-  <div>
-    <span>อัปเดตผลงานทุกสัปดาห์</span>
-    <h3>ดูผลงานติดตั้งล่าสุดบน Facebook</h3>
-    <p>
-      ติดตามภาพหน้างานจริง งานติดตั้งใหม่ และอัปเดตจากทีมช่าง M&amp;M CCTV
-    </p>
-  </div>
+ <a
+  className="facebook-works"
+  href="https://www.facebook.com/mmcctv.sales"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="ดูผลงานติดตั้งล่าสุดของ M&M CCTV บน Facebook"
+>
+  <span className="facebook-icon" aria-hidden="true">
+    <svg viewBox="0 0 24 24">
+      <path d="M13.8 22v-8h2.7l.4-3h-3.1V9.1c0-.9.3-1.5 1.6-1.5h1.7V4.9c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.4V11H7.6v3h2.8v8h3.4Z" />
+    </svg>
+  </span>
 
-  <a
-    href="https://www.facebook.com/mmcctv.sales"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    ดูผลงานเพิ่มเติมบน Facebook <span>↗</span>
-  </a>
-</div>
+  <span className="facebook-copy">
+    <small>อัปเดตผลงานใหม่ทุกสัปดาห์</small>
+    <strong>ดูผลงานติดตั้งล่าสุดบน Facebook</strong>
+    <span>
+      ภาพหน้างานจริงจากทีมช่าง M&amp;M CCTV
+    </span>
+  </span>
+
+  <span className="facebook-action">
+    ชมผลงานเพิ่มเติม <b>→</b>
+  </span>
+</a>
       </section>
 
       <section className="about" id="about">
