@@ -547,47 +547,84 @@ p {
   font-size: 16px;
 }
 .facebook-works {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 24px;
   margin-top: 32px;
-  padding: 30px 34px;
-  border: 1px solid var(--line);
-  background: var(--lavender);
+  padding: 28px 30px;
+  border: 1px solid #0f67d8;
+  background: #1877f2;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(24, 119, 242, 0.22);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
-.facebook-works > div > span {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--violet);
+.facebook-works:hover {
+  background: #0f6fe5;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(24, 119, 242, 0.32);
+}
+
+.facebook-icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.facebook-icon svg {
+  width: 40px;
+  height: 40px;
+  fill: #1877f2;
+}
+
+.facebook-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.facebook-copy small {
+  color: rgba(255, 255, 255, 0.78);
   font-size: 12px;
   font-weight: 700;
 }
 
-.facebook-works h3 {
-  margin: 0;
-  color: var(--ink);
-  font-size: 24px;
+.facebook-copy strong {
+  color: #ffffff;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.25;
 }
 
-.facebook-works p {
-  margin: 7px 0 0;
-  color: var(--muted);
+.facebook-copy > span {
+  color: rgba(255, 255, 255, 0.84);
   font-size: 14px;
 }
 
-.facebook-works > a {
-  flex-shrink: 0;
-  padding: 16px 22px;
-  background: var(--purple);
+.facebook-action {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
   color: #ffffff;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
+  white-space: nowrap;
 }
 
-.facebook-works > a span {
-  margin-left: 12px;
+.facebook-action b {
+  font-size: 22px;
+  line-height: 1;
 }
 .about {
   display: grid;
@@ -932,19 +969,34 @@ footer > small {
     height: 52px;
   }
   .facebook-works {
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 22px;
-  padding: 26px 22px;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 16px;
+  padding: 22px 20px;
 }
 
-.facebook-works h3 {
-  font-size: 21px;
+.facebook-icon {
+  width: 54px;
+  height: 54px;
 }
 
-.facebook-works > a {
+.facebook-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.facebook-copy strong {
+  font-size: 20px;
+}
+
+.facebook-copy > span {
+  font-size: 13px;
+}
+
+.facebook-action {
+  grid-column: 1 / -1;
+  justify-content: center;
   width: 100%;
-  text-align: center;
+  margin-top: 4px;
 }
 }
 @media (prefers-reduced-motion: reduce) {
