@@ -700,6 +700,8 @@ const scrollReviews = (direction: "previous" | "next") => {
     © 2026 M&amp;M CCTV · ห้างหุ้นส่วนสามัญ เอ็มแอนด์เอ็ม ซีซีทีวี
   </small>
 </footer>
+
+<a
   className="floating-line"
   href="https://line.me/ti/p/~mmcctv"
   onClick={() => trackLineClick("floating_button")}
