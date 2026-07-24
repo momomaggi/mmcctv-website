@@ -609,8 +609,97 @@ const scrollReviews = (direction: "previous" | "next") => {
   </div>
 </section>
 
-      <footer><a className="footer-brand" href="#top"><img src="/logo-mm-cctv.webp" alt=""/><span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span></a><p>รับติดตั้งและดูแลระบบรักษาความปลอดภัยครบวงจร</p><div><a href="#services">บริการ</a><a href="#works">ผลงาน</a><a href="#contact">ติดต่อเรา</a></div><small>© 2026 M&amp;M CCTV · ห้างหุ้นส่วนสามัญ เอ็มแอนด์เอ็ม ซีซีทีวี</small></footer>
-      <a
+      <footer>
+  <a className="footer-brand" href="#top">
+    <img
+      src="/logo-mm-cctv.webp"
+      alt="M&M CCTV"
+    />
+
+    <span>
+      <strong>M&amp;M CCTV</strong>
+      <small>SMART SECURITY FOR YOUR LIFE</small>
+    </span>
+  </a>
+
+  <p>
+    รับติดตั้งและดูแลระบบรักษาความปลอดภัยครบวงจร
+  </p>
+
+  <div className="footer-links">
+    <a href="#services">บริการ</a>
+    <a href="#works">ผลงาน</a>
+    <a href="#contact">ติดต่อเรา</a>
+  </div>
+
+  <div className="footer-social">
+    <a
+      className="social-link"
+      href="https://www.facebook.com/mmcctv.sales"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="ติดตาม M&M CCTV บน Facebook"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          fill="currentColor"
+          d="M14 8h3V4h-3c-3.3 0-5 2-5 5v2H6v4h3v7h4v-7h3.2l.8-4H13V9c0-.7.3-1 1-1Z"
+        />
+      </svg>
+
+      <span>Facebook</span>
+    </a>
+
+    <a
+      className="social-link social-link-instagram"
+      href="https://www.instagram.com/mmcctv.sales"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="ติดตาม M&M CCTV บน Instagram"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+
+        <circle
+          cx="17.5"
+          cy="6.5"
+          r="1.2"
+          fill="currentColor"
+        />
+      </svg>
+
+      <span>Instagram</span>
+    </a>
+  </div>
+
+  <small>
+    © 2026 M&amp;M CCTV · ห้างหุ้นส่วนสามัญ เอ็มแอนด์เอ็ม ซีซีทีวี
+  </small>
+</footer>
   className="floating-line"
   href="https://line.me/ti/p/~mmcctv"
   onClick={() => trackLineClick("floating_button")}
