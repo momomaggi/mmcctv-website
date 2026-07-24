@@ -95,7 +95,7 @@ export default function Home() {
   const [promoIndex, setPromoIndex] = useState(0);
   const [promoPaused, setPromoPaused] = useState(false);
   const promoTouchStart = useRef<number | null>(null);
-
+  const reviewsTrackRef = useRef<HTMLDivElement | null>(null);
   const showPreviousPromo = () => {
     setPromoIndex(
       (current) =>
@@ -134,7 +134,20 @@ export default function Home() {
 
     promoTouchStart.current = null;
   };
+const scrollReviews = (direction: "previous" | "next") => {
+  const track = reviewsTrackRef.current;
 
+  if (!track) return;
+
+  const card = track.querySelector<HTMLElement>(".review-card");
+  const distance =
+    (card?.offsetWidth ?? track.clientWidth * 0.85) + 20;
+
+  track.scrollBy({
+    left: direction === "next" ? distance : -distance,
+    behavior: "smooth",
+  });
+};
   useEffect(() => {
     if (promoPaused) return;
 
@@ -389,9 +402,26 @@ export default function Home() {
     </div>
 
     <div className="google-rating">
-      <span className="google-mark" aria-hidden="true">
-        G
-      </span>
+     <span className="google-mark" aria-hidden="true">
+  <svg viewBox="0 0 18 18">
+    <path
+      fill="#4285F4"
+      d="M17.64 9.205c0-.638-.057-1.252-.164-1.841H9v3.482h4.844c-.209 1.125-.843 2.078-1.797 2.716v2.258h2.908c1.702-1.567 2.685-3.874 2.685-6.615Z"
+    />
+    <path
+      fill="#34A853"
+      d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.258c-.806.54-1.836.859-3.048.859-2.344 0-4.328-1.585-5.037-3.711H.956v2.333C2.437 15.984 5.482 18 9 18Z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M3.963 10.71A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.281-1.71V4.957H.956A9 9 0 0 0 0 9c0 1.453.348 2.827.956 4.043l3.007-2.333Z"
+    />
+    <path
+      fill="#EA4335"
+      d="M9 3.58c1.321 0 2.508.454 3.442 1.345l2.582-2.582C13.463.891 11.426 0 9 0 5.482 0 2.437 2.016.956 4.957L3.963 7.29C4.672 5.164 6.656 3.58 9 3.58Z"
+    />
+  </svg>
+</span>
 
       <div>
         <strong>5 ดาว</strong>
@@ -403,7 +433,17 @@ export default function Home() {
     </div>
   </div>
 
-  <div className="reviews-track">
+<div className="reviews-slider">
+  <button
+    type="button"
+    className="review-nav review-nav-previous"
+    onClick={() => scrollReviews("previous")}
+    aria-label="ดูรีวิวก่อนหน้า"
+  >
+    ‹
+  </button>
+
+  <div className="reviews-track" ref={reviewsTrackRef}>
     {reviews.map((review) => (
       <a
         className="review-card"
@@ -438,6 +478,16 @@ export default function Home() {
       </a>
     ))}
   </div>
+
+  <button
+    type="button"
+    className="review-nav review-nav-next"
+    onClick={() => scrollReviews("next")}
+    aria-label="ดูรีวิวถัดไป"
+  >
+    ›
+  </button>
+</div>
 
   <div className="review-actions">
     <a
