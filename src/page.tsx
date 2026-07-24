@@ -1,18 +1,99 @@
+import { useEffect, useRef, useState } from "react";
+import type { TouchEvent } from "react";
+const promotions = [
+  {
+    desktop: "/promotions/promo-01.webp",
+    mobile: "/promotions/promo-01-mobile.webp",
+    alt: "โปรโมชั่นติดตั้งกล้องวงจรปิดชุดที่ 1",
+  },
+  {
+    desktop: "/promotions/promo-02.webp",
+    mobile: "/promotions/promo-02-mobile.webp",
+    alt: "โปรโมชั่นติดตั้งกล้องวงจรปิดชุดที่ 2",
+  },
+  {
+    desktop: "/promotions/promo-03.webp",
+    mobile: "/promotions/promo-03-mobile.webp",
+    alt: "โปรโมชั่นระบบรักษาความปลอดภัยชุดที่ 3",
+  },
+  {
+    desktop: "/promotions/promo-04.webp",
+    mobile: "/promotions/promo-04-mobile.webp",
+    alt: "โปรโมชั่นระบบรักษาความปลอดภัยชุดที่ 4",
+  },
+  {
+    desktop: "/promotions/promo-05.webp",
+    mobile: "/promotions/promo-05-mobile.webp",
+    alt: "โปรโมชั่นระบบรักษาความปลอดภัยชุดที่ 5",
+  },
+];
 const services = [
   { no: "01", image: "/service-previews/01-cctv-vigi-c320.webp", title: "กล้องวงจรปิด", text: "ออกแบบและติดตั้งระบบ IP Camera และ HDTVI สำหรับบ้าน ร้านค้า ออฟฟิศ และโรงงาน" },
   { no: "02", image: "/service-previews/02-access-senseface2a.webp", title: "ระบบควบคุมเข้า–ออก", text: "เครื่องสแกนใบหน้า ลายนิ้วมือ และระบบล็อกประตูที่จัดการได้อย่างเป็นระบบ" },
   { no: "03", image: "/service-previews/03-barrier-hikvision-anpr.webp", title: "ระบบไม้กั้นรถยนต์", text: "ไม้กั้นพร้อมกล้องอ่านป้ายทะเบียน AI เพิ่มความสะดวกและความปลอดภัยให้ทุกพื้นที่" },
   { no: "04", image: "/service-previews/04-ma-maintenance-hospital-factory-v2.webp", title: "บริการดูแลระบบ MA", text: "ตรวจเช็ก บำรุงรักษา และแก้ไขปัญหาระบบเดิม พร้อมรายงานผลโดยทีมช่าง" },
 ];
-
 const steps = [
   ["01", "คุยความต้องการ", "บอกลักษณะพื้นที่ จำนวนจุด และงบประมาณคร่าว ๆ"],
   ["02", "สำรวจหน้างาน", "ทีมช่างเข้าตรวจพื้นที่ วางตำแหน่งและระบบเดินสาย"],
   ["03", "เสนอราคา", "แจกแจงอุปกรณ์และค่าติดตั้งชัดเจนก่อนเริ่มงาน"],
   ["04", "ติดตั้งและสอนใช้งาน", "ส่งมอบงานเรียบร้อย พร้อมตั้งค่าดูผ่านมือถือ"],
 ];
-
 export default function Home() {
+  const [promoIndex, setPromoIndex] = useState(0);
+  const [promoPaused, setPromoPaused] = useState(false);
+  const promoTouchStart = useRef<number | null>(null);
+
+  const showPreviousPromo = () => {
+    setPromoIndex(
+      (current) =>
+        (current - 1 + promotions.length) % promotions.length
+    );
+  };
+
+  const showNextPromo = () => {
+    setPromoIndex(
+      (current) => (current + 1) % promotions.length
+    );
+  };
+
+  const handlePromoTouchStart = (
+    event: TouchEvent<HTMLDivElement>
+  ) => {
+    promoTouchStart.current = event.touches[0].clientX;
+  };
+
+  const handlePromoTouchEnd = (
+    event: TouchEvent<HTMLDivElement>
+  ) => {
+    if (promoTouchStart.current === null) return;
+
+    const distance =
+      promoTouchStart.current -
+      event.changedTouches[0].clientX;
+
+    if (Math.abs(distance) > 50) {
+      if (distance > 0) {
+        showNextPromo();
+      } else {
+        showPreviousPromo();
+      }
+    }
+
+    promoTouchStart.current = null;
+  };
+
+  useEffect(() => {
+    if (promoPaused) return;
+
+    const timer = window.setInterval(() => {
+      setPromoIndex(
+        (current) => (current + 1) % promotions.length
+      );
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [promoPaused]);
   return (
     <main>
       <header className="site-header">
@@ -76,19 +157,57 @@ export default function Home() {
     </a>
   </div>
 
-  <div className="promo-media">
-    <picture>
-      <source
-        media="(max-width: 620px)"
-        srcSet="/promotions/promo-01-mobile.webp"
+<div
+  className="promo-media"
+  onMouseEnter={() => setPromoPaused(true)}
+  onMouseLeave={() => setPromoPaused(false)}
+  onTouchStart={handlePromoTouchStart}
+  onTouchEnd={handlePromoTouchEnd}
+>
+  <picture className="promo-slide" key={promoIndex}>
+    <source
+      media="(max-width: 620px)"
+      srcSet={promotions[promoIndex].mobile}
+    />
+    <img
+      src={promotions[promoIndex].desktop}
+      alt={promotions[promoIndex].alt}
+    />
+  </picture>
+
+  <button
+    type="button"
+    className="promo-arrow promo-prev"
+    onClick={showPreviousPromo}
+    aria-label="ดูโปรโมชั่นก่อนหน้า"
+  >
+    ‹
+  </button>
+
+  <button
+    type="button"
+    className="promo-arrow promo-next"
+    onClick={showNextPromo}
+    aria-label="ดูโปรโมชั่นถัดไป"
+  >
+    ›
+  </button>
+
+  <div className="promo-dots" aria-label="เลือกโปรโมชั่น">
+    {promotions.map((promotion, index) => (
+      <button
+        type="button"
+        key={promotion.desktop}
+        className={`promo-dot ${
+          index === promoIndex ? "active" : ""
+        }`}
+        onClick={() => setPromoIndex(index)}
+        aria-label={`ดูโปรโมชั่นลำดับที่ ${index + 1}`}
+        aria-current={index === promoIndex ? "true" : undefined}
       />
-      <img
-        src="/promotions/promo-01.webp"
-        alt="โปรโมชั่นติดตั้งระบบรักษาความปลอดภัย M&M CCTV"
-        loading="lazy"
-      />
-    </picture>
+    ))}
   </div>
+</div>
 </section>
 
       <section className="section works" id="works">
