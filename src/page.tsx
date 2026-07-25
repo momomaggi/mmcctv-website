@@ -286,8 +286,8 @@ const scrollReviews = (direction: "previous" | "next") => {
     </p>
     <div className="promo-prices" aria-label="ราคาเริ่มต้น">
   <div className="promo-price-item">
-    <span>ชุดกล้องเดินสาย 4 ตัว</span>
-    <strong>ระบบ IP Camera เริ่มต้น 13,990 บาท</strong>
+    <span>ชุดกล้องเดินสาย 4 ตัว [ระบบ IP Camera]</span>
+    <strong>เริ่มต้น 13,990 บาท</strong>
   </div>
 </div>
 
