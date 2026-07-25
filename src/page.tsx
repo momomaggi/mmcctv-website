@@ -690,12 +690,12 @@ const scrollReviews = (direction: "previous" | "next") => {
   <div className="footer-social">
     <a
   className="social-link social-link-phone"
-  href="tel:0XXXXXXXXX"
+  href="tel:0991236879"
   onClick={() => trackPhoneClick("footer")}
   aria-label="โทรสอบถาม M&M CCTV"
 >
   <span aria-hidden="true">☎</span>
-  <span>0XX-XXX-XXXX</span>
+  <span>099-123-6879</span>
 </a>
     <a
       className="social-link"
