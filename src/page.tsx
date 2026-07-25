@@ -122,7 +122,19 @@ export default function Home() {
     link_location: linkLocation,
   });
 };
-  
+const trackPhoneClick = (linkLocation: string) => {
+  const analyticsWindow = window as typeof window & {
+    gtag?: (
+      command: "event",
+      eventName: string,
+      parameters?: Record<string, string>
+    ) => void;
+  };
+
+  analyticsWindow.gtag?.("event", "phone_contact_click", {
+    link_location: linkLocation,
+  });
+};  
   const showPreviousPromo = () => {
     setPromoIndex(
       (current) =>
@@ -620,7 +632,19 @@ const scrollReviews = (direction: "previous" | "next") => {
         ส่งรูปหน้างานหรือแชร์โลเคชั่นผ่าน LINE
         เพื่อให้ทีมงานประเมินเบื้องต้นได้ฟรี
       </p>
+<a
+  className="phone-link"
+  href="tel:0991236879"
+  onClick={() => trackPhoneClick("contact_card")}
+  aria-label="โทรสอบถาม M&M CCTV"
+>
+  <span aria-hidden="true">☎</span>
 
+  <div>
+    <small>โทรสอบถาม</small>
+    <strong>099-123-6879</strong>
+  </div>
+</a>
       <p className="line-hours">
         <span aria-hidden="true">◷</span>
         เวลาทำการ จันทร์–ศุกร์ 08.30–16.30 น.
@@ -664,6 +688,15 @@ const scrollReviews = (direction: "previous" | "next") => {
   </div>
 
   <div className="footer-social">
+    <a
+  className="social-link social-link-phone"
+  href="tel:0XXXXXXXXX"
+  onClick={() => trackPhoneClick("footer")}
+  aria-label="โทรสอบถาม M&M CCTV"
+>
+  <span aria-hidden="true">☎</span>
+  <span>0XX-XXX-XXXX</span>
+</a>
     <a
       className="social-link"
       href="https://www.facebook.com/mmcctv.sales"
