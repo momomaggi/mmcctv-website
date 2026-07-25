@@ -284,6 +284,16 @@ const scrollReviews = (direction: "previous" | "next") => {
       ชุดติดตั้งพร้อมอุปกรณ์มาตรฐาน มีหลายแบรนด์และหลายระดับราคา
       ทีมงานช่วยเปรียบเทียบให้ตรงกับพื้นที่ของคุณ
     </p>
+    <div className="promo-prices" aria-label="ราคาเริ่มต้น">
+  <div className="promo-price-item">
+    <span>ชุดกล้องเดินสาย 4 ตัว</span>
+    <strong>เริ่มต้น 13,990 บาท</strong>
+  </div>
+</div>
+
+<p className="promo-price-note">
+  * ราคาเริ่มต้นอาจเปลี่ยนแปลงตามพื้นที่ ระยะเดินสาย และอุปกรณ์ที่เลือก
+</p>
     <a
   className="btn white"
   href="https://line.me/ti/p/~mmcctv"
