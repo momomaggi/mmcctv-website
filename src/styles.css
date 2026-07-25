@@ -494,6 +494,38 @@ p {
   line-height: 1.8;
   font-size: 17px;
 }
+.promo-prices {
+  display: grid;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.promo-price-item {
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.promo-price-item span {
+  display: block;
+  color: #e3d5e7;
+  font-size: 13px;
+}
+
+.promo-price-item strong {
+  display: block;
+  margin-top: 4px;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.promo-copy .promo-price-note {
+  margin: 10px 0 0;
+  color: #cbb9d2;
+  font-size: 11px;
+  line-height: 1.6;
+}
 .btn.white {
   background: white;
   color: var(--purple);
