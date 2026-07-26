@@ -2081,26 +2081,71 @@ footer > small {
 .solution-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
+  gap: 16px;
 }
 .solution-grid article {
-  min-height: 300px;
-  padding: 34px 34px 40px;
-  border-right: 1px solid var(--line);
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 340px;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 34px 32px 32px;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid rgba(7, 31, 61, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(7, 31, 61, 0.08);
 }
-.solution-grid article:last-child {
-  border-right: 0;
+.solution-grid article::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 31, 61, 0.04) 0%,
+      rgba(217, 242, 247, 0.08) 34%,
+      rgba(217, 242, 247, 0.84) 72%,
+      rgba(217, 242, 247, 0.98) 100%
+    );
+  content: "";
 }
-.solution-grid article > span {
-  color: var(--violet);
-  font-size: 12px;
+.solution-icon {
+  position: absolute;
+  right: 30px;
+  bottom: 89px;
+  color: rgba(7, 31, 61, 0.72);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+}
+.solution-copy {
+  position: relative;
+  z-index: 1;
+  max-width: calc(100% - 58px);
 }
 .solution-grid h3 {
-  margin: 78px 0 14px;
+  margin: 0 0 10px;
   color: var(--purple);
-  font-size: 24px;
+  font-size: 22px;
+  line-height: 1.25;
 }
-.solution-grid p,
+.solution-grid p {
+  margin: 0;
+  color: rgba(7, 31, 61, 0.76);
+}
+.solution-number {
+  position: absolute;
+  right: 22px;
+  bottom: 4px;
+  color: rgba(7, 31, 61, 0.12);
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
 .system-list p,
 .why-grid p {
   color: var(--muted);
@@ -2246,14 +2291,10 @@ footer > small {
   }
   .solution-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
   }
   .solution-grid article {
-    min-height: auto;
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
-  }
-  .solution-grid h3 {
-    margin-top: 34px;
+    min-height: 340px;
   }
   .why-grid {
     grid-template-columns: repeat(2, 1fr);

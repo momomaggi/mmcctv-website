@@ -4,14 +4,20 @@ const solutions = [
   {
     title: "บ้านพักอาศัย",
     text: "วางมุมกล้องให้ครอบคลุมทางเข้า รอบบ้าน และจุดสำคัญ พร้อมตั้งค่าดูภาพผ่านมือถือ",
+    image: "/services/cctv/cctv-solution-modern-home.webp",
+    icon: "⌂",
   },
   {
     title: "ร้านค้าและสำนักงาน",
     text: "ช่วยดูแลหน้าร้าน จุดชำระเงิน พื้นที่ทำงาน และทางเข้า–ออก พร้อมค้นหาภาพย้อนหลังได้สะดวก",
+    image: "/services/cctv/cctv-solution-office-retail.webp",
+    icon: "▦",
   },
   {
     title: "โรงงานและคลังสินค้า",
     text: "ออกแบบระบบให้เหมาะกับพื้นที่กว้าง จุดเสี่ยง แสงหน้างาน และระยะเดินสายจริง",
+    image: "/services/cctv/cctv-solution-factory-warehouse.webp",
+    icon: "⚙",
   },
 ];
 
@@ -119,10 +125,16 @@ export default function CctvPage() {
         </div>
         <div className="solution-grid">
           {solutions.map((solution, index) => (
-            <article key={solution.title}>
-              <span>0{index + 1}</span>
-              <h3>{solution.title}</h3>
-              <p>{solution.text}</p>
+            <article
+              key={solution.title}
+              style={{ backgroundImage: `url(${solution.image})` }}
+            >
+              <span className="solution-icon" aria-hidden="true">{solution.icon}</span>
+              <div className="solution-copy">
+                <h3>{solution.title}</h3>
+                <p>{solution.text}</p>
+              </div>
+              <span className="solution-number" aria-hidden="true">0{index + 1}</span>
             </article>
           ))}
         </div>
