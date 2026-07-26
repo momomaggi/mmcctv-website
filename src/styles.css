@@ -2117,9 +2117,11 @@ footer > small {
   right: 30px;
   bottom: 89px;
   color: rgba(7, 31, 61, 0.72);
+  font-family: Arial, Tahoma, sans-serif;
   font-size: 30px;
   font-weight: 400;
   line-height: 1;
+  font-variant-emoji: text;
 }
 .solution-copy {
   position: relative;

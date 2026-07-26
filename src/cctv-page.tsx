@@ -17,7 +17,7 @@ const solutions = [
     title: "โรงงานและคลังสินค้า",
     text: "ออกแบบระบบให้เหมาะกับพื้นที่กว้าง จุดเสี่ยง แสงหน้างาน และระยะเดินสายจริง",
     image: "/services/cctv/cctv-solution-factory-warehouse.webp",
-    icon: "⚙",
+    icon: "⚙︎",
   },
 ];
 
