@@ -98,7 +98,7 @@ export default function CctvPage() {
           </div>
         </div>
         <div className="cctv-hero-image">
-          <img src="/hero-installation-modern-v3.webp" alt="ทีมช่าง M&M CCTV ติดตั้งกล้องวงจรปิดภายในบ้าน" />
+          <img src="/services/cctv/cctv-service-hero-modern-home.webp" alt="กล้องวงจรปิดติดตั้งภายนอกบ้านสมัยใหม่" />
           <div className="cctv-image-note">
             <strong>10+</strong>
             <span>ปีประสบการณ์<br />งานระบบรักษาความปลอดภัย</span>
