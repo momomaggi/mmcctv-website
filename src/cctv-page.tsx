@@ -172,7 +172,7 @@ export default function CctvPage() {
           <a className="btn white" href="https://line.me/ti/p/~mmcctv">
             ทัก LINE ID: mmcctv <span>↗</span>
           </a>
-          <a className="detail-phone" href="tel:0817825454">โทร 081-782-5454</a>
+          <a className="detail-phone" href="tel:0991236879">โทร 099-123-6879</a>
         </div>
       </section>
 
