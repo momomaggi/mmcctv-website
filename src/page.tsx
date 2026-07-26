@@ -662,7 +662,7 @@ const scrollReviews = (direction: "previous" | "next") => {
   onClick={() => trackPhoneClick("contact_card")}
   aria-label="โทรสอบถาม M&M CCTV"
 >
-  <span aria-hidden="true">☎</span>
+  <span aria-hidden="true">☎︎</span>
 
   <div>
     <small>โทรสอบถาม</small>
@@ -718,7 +718,7 @@ const scrollReviews = (direction: "previous" | "next") => {
   onClick={() => trackPhoneClick("footer")}
   aria-label="โทรสอบถาม M&M CCTV"
 >
-  <span aria-hidden="true">☎</span>
+  <span aria-hidden="true">☎︎</span>
   <span>099-123-6879</span>
 </a>
     <a

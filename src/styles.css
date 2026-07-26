@@ -1369,7 +1369,9 @@ p {
   border-radius: 50%;
   background: var(--purple);
   color: #ffffff;
+  font-family: Arial, Tahoma, sans-serif;
   font-size: 17px;
+  font-variant-emoji: text;
 }
 
 .phone-link > div {
