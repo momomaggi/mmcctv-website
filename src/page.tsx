@@ -106,8 +106,10 @@ const reviews = [
 export default function Home() {
   const [promoIndex, setPromoIndex] = useState(0);
   const [promoPaused, setPromoPaused] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const promoTouchStart = useRef<number | null>(null);
   const reviewsTrackRef = useRef<HTMLDivElement | null>(null);
+  const closeMenu = () => setIsMenuOpen(false);
   
   const trackLineClick = (linkLocation: string) => {
   const analyticsWindow = window as typeof window & {
@@ -205,8 +207,20 @@ const scrollReviews = (direction: "previous" | "next") => {
           <img src="/logo-mm-cctv.webp" alt="M&M CCTV" />
           <span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span>
         </a>
-        <nav aria-label="เมนูหลัก">
-          <a href="#services">บริการ</a><a href="#promotions">โปรโมชั่น</a><a href="#works">ผลงาน</a><a href="#about">เกี่ยวกับเรา</a><a href="#contact">ติดต่อเรา</a>
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={isMenuOpen ? "ปิดเมนู" : "เปิดเมนู"}
+          aria-expanded={isMenuOpen}
+          aria-controls="main-menu"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav id="main-menu" className={isMenuOpen ? "is-open" : ""} aria-label="เมนูหลัก">
+          <a href="#services" onClick={closeMenu}>บริการ</a><a href="#promotions" onClick={closeMenu}>โปรโมชั่น</a><a href="#works" onClick={closeMenu}>ผลงาน</a><a href="#about" onClick={closeMenu}>เกี่ยวกับเรา</a><a href="#contact" onClick={closeMenu}>ติดต่อเรา</a>
         </nav>
         <a
   className="header-cta"
@@ -621,7 +635,7 @@ const scrollReviews = (direction: "previous" | "next") => {
         </span>
 
         <div>
-          <small>LINE OFFICIAL / LINE ID</small>
+          <small>LINE ID</small>
           <strong>mmcctv</strong>
         </div>
       </div>
