@@ -1,14 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap");
 
 :root {
-  --ink: #17151a;
-  --muted: #6f6971;
-  --purple: #3b0a4a;
-  --violet: #7257b5;
-  --lavender: #eee8f5;
-  --cream: #f8f5f0;
-  --white: #fff;
-  --line: #ded7d1;
+  --ink: #071f3d;
+  --text: #34383d;
+  --muted: #66747c;
+  --purple: #071f3d;
+  --violet: #078ea8;
+  --teal-bright: #0aa3b8;
+  --teal-hover: #06758a;
+  --lavender: #d9f2f7;
+  --cream: #f2fafc;
+  --navy-tint: #e8eef3;
+  --white: #ffffff;
+  --line: #dce7ec;
+  --focus: #24bdd0;
 }
 * {
   box-sizing: border-box;
@@ -19,7 +24,7 @@ html {
 body {
   margin: 0;
   background: var(--cream);
-  color: var(--ink);
+  color: var(--text);
   font-family: "Noto Sans Thai", system-ui, sans-serif;
 }
 a {
@@ -36,12 +41,12 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(248, 245, 240, 0.94);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(14px);
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid rgba(59, 10, 74, 0.08);
+  border-bottom: 1px solid rgba(7, 31, 61, 0.08);
 }
 .brand,
 .footer-brand {
@@ -2321,5 +2326,143 @@ footer > small {
   }
   .detail-footer > small {
     grid-column: auto;
+  }
+}
+
+/* Navy and teal brand palette */
+h1,
+h2,
+h3 {
+  color: var(--ink);
+}
+.site-header {
+  border-bottom-color: rgba(7, 31, 61, 0.08);
+}
+.site-header nav a:focus-visible,
+.menu-toggle:focus-visible,
+.btn:focus-visible,
+.header-cta:focus-visible,
+.social-link:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+.primary {
+  background: linear-gradient(135deg, var(--violet), var(--teal-bright));
+}
+.primary:hover {
+  background: var(--teal-hover);
+}
+.secondary {
+  border-color: var(--violet);
+  color: var(--ink);
+}
+.location,
+.about-facts,
+.cctv-hero-points {
+  border-color: var(--line);
+}
+.experience,
+.cctv-image-note,
+.systems-visual > div {
+  background: rgba(7, 31, 61, 0.94);
+}
+.promo h2,
+.contact h2,
+.cctv-contact h2 {
+  color: var(--white);
+}
+.contact {
+  background:
+    radial-gradient(
+      circle at 72% 22%,
+      rgba(10, 163, 184, 0.32) 0%,
+      rgba(7, 142, 168, 0.16) 28%,
+      transparent 52%
+    ),
+    linear-gradient(
+      135deg,
+      #071f3d 0%,
+      #0a3553 48%,
+      #06233f 100%
+    );
+}
+.kicker.light,
+.promo > div > p,
+.contact > div > p,
+.promo-price-item span,
+.cctv-contact p,
+.detail-phone,
+.systems-visual span {
+  color: #d9f2f7;
+}
+.promo-copy .promo-price-note {
+  color: #b9dce4;
+}
+.promo-card,
+.promo-media,
+.phone-link,
+.line-qr {
+  background: var(--cream);
+}
+.steps {
+  box-shadow: 0 18px 45px rgba(7, 31, 61, 0.06);
+}
+.steps article:hover {
+  background: rgba(7, 142, 168, 0.06);
+}
+.steps article:hover .step-icon {
+  box-shadow: 0 14px 30px rgba(7, 31, 61, 0.12);
+}
+.step-icon {
+  background: linear-gradient(145deg, #f2fafc 0%, #d9f2f7 100%);
+}
+.step-icon::after {
+  background: rgba(7, 142, 168, 0.13);
+}
+.review-card p,
+.line-hours {
+  color: var(--text);
+}
+.line-card {
+  box-shadow:
+    0 24px 60px rgba(7, 31, 61, 0.24),
+    0 0 55px rgba(7, 142, 168, 0.14);
+}
+.line-card-head small,
+.line-note {
+  color: var(--muted);
+}
+.line-card-head strong {
+  color: var(--ink);
+}
+.phone-link,
+.line-qr {
+  border-color: var(--line);
+}
+.why-grid {
+  background: rgba(255, 255, 255, 0.72);
+}
+.why-grid article {
+  border-color: var(--line);
+}
+footer {
+  background: var(--ink);
+}
+footer > p {
+  color: #b9dce4;
+}
+footer > small {
+  border-top-color: rgba(255, 255, 255, 0.16);
+  color: #a9c4ce;
+}
+
+@media (max-width: 980px) {
+  .site-header nav {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom-color: rgba(7, 31, 61, 0.12);
+    box-shadow: 0 16px 30px rgba(7, 31, 61, 0.08);
+  }
+  .site-header nav a {
+    border-bottom-color: rgba(7, 31, 61, 0.08);
   }
 }
