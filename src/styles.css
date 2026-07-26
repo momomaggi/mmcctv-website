@@ -2228,21 +2228,76 @@ footer > small {
   text-align: left;
 }
 .why-grid article {
-  min-height: 290px;
+  position: relative;
+  isolation: isolate;
+  min-height: 350px;
   padding: 34px 28px;
+  overflow: hidden;
   border-right: 1px solid #cbbfd0;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+.why-grid article:hover {
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 34px rgba(7, 31, 61, 0.1);
+  transform: translateY(-4px);
 }
 .why-grid article:last-child {
   border-right: 0;
 }
 .why-grid strong {
-  color: var(--violet);
-  font-size: 12px;
+  position: absolute;
+  z-index: 0;
+  top: 14px;
+  left: 20px;
+  color: rgba(7, 31, 61, 0.1);
+  font-size: 72px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.08em;
+}
+.why-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  margin: 26px auto 28px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #f2fafc 0%, #d9f2f7 100%);
+  box-shadow: 0 12px 26px rgba(7, 31, 61, 0.08);
+}
+.why-icon::after {
+  position: absolute;
+  right: 1px;
+  bottom: 7px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(7, 142, 168, 0.13);
+  content: "";
+}
+.why-icon img {
+  position: relative;
+  z-index: 1;
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
 }
 .why-grid h3 {
-  margin: 72px 0 14px;
+  position: relative;
+  z-index: 1;
+  margin: 0 0 14px;
   color: var(--purple);
   font-size: 20px;
+}
+.why-grid p {
+  position: relative;
+  z-index: 1;
 }
 .cctv-contact {
   display: grid;
@@ -2373,11 +2428,21 @@ footer > small {
   .why-grid article,
   .why-grid article:nth-child(2) {
     min-height: auto;
+    padding: 30px 24px 34px;
     border-right: 0;
     border-bottom: 1px solid #cbbfd0;
   }
+  .why-icon {
+    width: 96px;
+    height: 96px;
+    margin: 18px auto 24px;
+  }
+  .why-icon img {
+    width: 68px;
+    height: 68px;
+  }
   .why-grid h3 {
-    margin-top: 34px;
+    margin-top: 0;
   }
   .detail-footer {
     grid-template-columns: 1fr;
@@ -2541,6 +2606,34 @@ footer > small {
     margin-top: 7px;
     font-size: 15px;
     line-height: 1.5;
+  }
+
+  .why-grid article::before,
+  .why-grid article::after {
+    position: absolute;
+    z-index: 1;
+    top: 116px;
+    width: calc(50% - 70px);
+    border-top: 2px dashed rgba(7, 142, 168, 0.38);
+    content: "";
+  }
+
+  .why-grid article::before {
+    left: 0;
+  }
+
+  .why-grid article::after {
+    right: 0;
+    color: rgba(7, 142, 168, 0.72);
+    content: "›";
+    font-size: 20px;
+    line-height: 0;
+    text-align: right;
+  }
+
+  .why-grid article:first-child::before,
+  .why-grid article:last-child::after {
+    display: none;
   }
 
   .location,

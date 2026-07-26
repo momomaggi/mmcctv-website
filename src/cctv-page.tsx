@@ -177,10 +177,30 @@ export default function CctvPage() {
         <span className="kicker">สิ่งที่ได้รับจาก M&amp;M CCTV</span>
         <h2>ครบตั้งแต่คำแนะนำ<br />จนถึงหลังส่งมอบงาน</h2>
         <div className="why-grid">
-          <article><strong>01</strong><h3>สำรวจหน้างาน</h3><p>ดูตำแหน่งติดตั้ง ระยะสาย แสง และจุดเสี่ยงก่อนเลือกระบบ</p></article>
-          <article><strong>02</strong><h3>เสนอราคาเป็นรายการ</h3><p>แจกแจงอุปกรณ์และค่าติดตั้งให้ตรวจสอบก่อนเริ่มงาน</p></article>
-          <article><strong>03</strong><h3>ติดตั้งพร้อมตั้งค่า</h3><p>เก็บงานเรียบร้อย ตั้งค่าบันทึกภาพ และสอนดูผ่านมือถือ</p></article>
-          <article><strong>04</strong><h3>ติดต่อทีมเดิมได้</h3><p>เมื่อมีคำถามหรือต้องการดูแลระบบภายหลัง ยังติดต่อทีมงานได้</p></article>
+          <article>
+            <strong>01</strong>
+            <div className="why-icon"><img src="/process-icons/process-02-survey.png" alt="" loading="lazy" /></div>
+            <h3>สำรวจหน้างาน</h3>
+            <p>ดูตำแหน่งติดตั้ง ระยะสาย แสง และจุดเสี่ยงก่อนเลือกระบบ</p>
+          </article>
+          <article>
+            <strong>02</strong>
+            <div className="why-icon"><img src="/process-icons/process-03-quote.png" alt="" loading="lazy" /></div>
+            <h3>เสนอราคาเป็นรายการ</h3>
+            <p>แจกแจงอุปกรณ์และค่าติดตั้งให้ตรวจสอบก่อนเริ่มงาน</p>
+          </article>
+          <article>
+            <strong>03</strong>
+            <div className="why-icon"><img src="/process-icons/process-04-install.png" alt="" loading="lazy" /></div>
+            <h3>ติดตั้งพร้อมตั้งค่า</h3>
+            <p>เก็บงานเรียบร้อย ตั้งค่าบันทึกภาพ และสอนดูผ่านมือถือ</p>
+          </article>
+          <article>
+            <strong>04</strong>
+            <div className="why-icon"><img src="/process-icons/process-01-discuss.png" alt="" loading="lazy" /></div>
+            <h3>ติดต่อทีมเดิมได้</h3>
+            <p>เมื่อมีคำถามหรือต้องการดูแลระบบภายหลัง ยังติดต่อทีมงานได้</p>
+          </article>
         </div>
       </section>
 
