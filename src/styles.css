@@ -2163,12 +2163,17 @@ footer > small {
 }
 .systems-visual {
   position: relative;
-  min-height: 760px;
+  align-self: start;
+  aspect-ratio: 6 / 5;
   background: var(--lavender);
 }
-.systems-visual > img {
+.systems-visual > picture,
+.systems-visual > picture > img {
+  display: block;
   width: 100%;
   height: 100%;
+}
+.systems-visual > picture > img {
   object-fit: cover;
 }
 .systems-visual > div {
@@ -2290,9 +2295,6 @@ footer > small {
     grid-template-columns: 1fr;
     gap: 36px;
   }
-  .systems-visual {
-    min-height: 560px;
-  }
   .solution-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -2352,7 +2354,7 @@ footer > small {
     font-size: 38px;
   }
   .systems-visual {
-    min-height: 440px;
+    aspect-ratio: 4 / 5;
   }
   .why-grid {
     grid-template-columns: 1fr;

@@ -142,7 +142,17 @@ export default function CctvPage() {
 
       <section className="cctv-systems" id="systems">
         <div className="systems-visual">
-          <img src="/service-previews/01-cctv-vigi-c320.webp" alt="ตัวอย่างกล้องวงจรปิดสำหรับติดตั้งภายนอกอาคาร" loading="lazy" />
+          <picture>
+            <source
+              media="(max-width: 620px)"
+              srcSet="/services/cctv/cctv-system-contexts-mobile.webp"
+            />
+            <img
+              src="/services/cctv/cctv-system-contexts-desktop.webp"
+              alt="ตัวอย่างการเลือกกล้องวงจรปิดสำหรับบ้าน ร้านค้า และคลังสินค้า"
+              loading="lazy"
+            />
+          </picture>
           <div>
             <span>เลือกจากหน้างานจริง</span>
             <strong>ไม่ยัดสเปกเกินความจำเป็น</strong>
