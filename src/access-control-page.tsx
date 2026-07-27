@@ -19,6 +19,12 @@ const accessMethods = [
     title: "ลายนิ้วมือ",
     text: "ยืนยันตัวบุคคลได้ชัดเจน เหมาะกับจุดที่ต้องควบคุมการใช้งาน",
   },
+  {
+    no: "04",
+    label: "MOBILE",
+    title: "มือถือแทนบัตร",
+    text: "ใช้สมาร์ทโฟนหรือแท็บเล็ตยืนยันสิทธิ์ผ่าน NFC หรือ Bluetooth ในอุปกรณ์และระบบที่รองรับ",
+  },
 ];
 
 const attendanceFeatures = [
@@ -67,6 +73,17 @@ function AccessMethodIcon({ type }: { type: string }) {
         <path d="M30 37c0-2 1-5 3-5s3 3 3 5c0 7-2 12-5 17" />
         <path d="M14 33c0-12 7-23 18-23 7 0 13 4 17 10" />
         <path d="M16 43c2 8 6 13 11 17" />
+      </svg>
+    );
+  }
+
+  if (type === "MOBILE") {
+    return (
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect x="16" y="8" width="28" height="48" rx="5" />
+        <path d="M25 14h10M27 49h6" />
+        <path d="M49 22c4 3 4 9 0 12M53 17c8 6 8 16 0 22" />
+        <path d="M38 26c2 1 2 3 0 4" />
       </svg>
     );
   }

@@ -2212,7 +2212,7 @@ footer > small {
 }
 .access-method-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: #c9e2e7;
   border: 1px solid #c9e2e7;
@@ -2668,7 +2668,7 @@ footer > small {
     gap: 24px;
   }
   .access-method-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
   .access-method-grid article {
     min-height: 340px;
@@ -2748,6 +2748,9 @@ footer > small {
   }
   .access-method-grid article {
     min-height: 320px;
+  }
+  .access-method-grid {
+    grid-template-columns: 1fr;
   }
   .access-system-image {
     min-height: 0;
