@@ -329,6 +329,215 @@ p {
   min-height: 2.8em;
   color: var(--purple);
 }
+
+/* Vehicle barrier service */
+.barrier-page {
+  --barrier-ink: #071f3d;
+  --barrier-mint: #52d6a5;
+  color: var(--barrier-ink);
+  background: #f5f3ee;
+}
+.barrier-header {
+  border-bottom: 1px solid rgba(7, 31, 61, 0.1);
+}
+.barrier-hero {
+  position: relative;
+  min-height: calc(100vh - 92px);
+  overflow: hidden;
+  background: #071f3d;
+}
+.barrier-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.barrier-hero::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(5, 22, 39, 0.97) 0%, rgba(5, 22, 39, 0.9) 34%, rgba(5, 22, 39, 0.16) 58%, transparent 72%);
+  content: "";
+}
+.barrier-hero-copy {
+  position: relative;
+  z-index: 1;
+  width: min(590px, 44%);
+  padding: clamp(90px, 11vw, 160px) clamp(28px, 7vw, 108px);
+  color: white;
+}
+.barrier-hero-copy > a:first-child {
+  color: rgba(255,255,255,.75);
+  font-size: 13px;
+}
+.barrier-hero-copy > span,
+.barrier-section-head > span,
+.barrier-system > span,
+.barrier-contact > span {
+  display: block;
+  margin-top: 28px;
+  color: #76e5bc;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+.barrier-hero h1 {
+  margin: 28px 0;
+  color: white;
+  font-size: clamp(52px, 5vw, 76px);
+  line-height: .98;
+  letter-spacing: -.06em;
+}
+.barrier-hero h1 em {
+  color: #76e5bc;
+  font-style: normal;
+}
+.barrier-hero-copy p {
+  max-width: 620px;
+  margin-bottom: 34px;
+  color: rgba(255,255,255,.76);
+  font-size: 19px;
+  line-height: 1.8;
+}
+.barrier-methods {
+  padding: 120px clamp(28px, 7vw, 108px);
+}
+.barrier-section-head {
+  display: grid;
+  grid-template-columns: .28fr 1fr .65fr;
+  gap: 48px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.barrier-section-head > span {
+  align-self: start;
+  margin: 0;
+}
+.barrier-section-head h2,
+.barrier-system h2,
+.barrier-contact h2 {
+  margin: 0;
+  font-size: clamp(44px, 5vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -.055em;
+}
+.barrier-section-head p,
+.barrier-system p {
+  margin: 0;
+  color: #667484;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.barrier-method-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: #d6d2ca;
+  border: 1px solid #d6d2ca;
+}
+.barrier-method-grid article {
+  min-height: 290px;
+  padding: 38px;
+  background: #fff;
+}
+.barrier-method-grid article > span {
+  color: var(--barrier-mint);
+  font-size: 12px;
+  font-weight: 800;
+}
+.barrier-method-grid h3 {
+  margin: 80px 0 14px;
+  font-size: 30px;
+}
+.barrier-method-grid p {
+  color: #667484;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.barrier-system {
+  display: grid;
+  grid-template-columns: .25fr .85fr 1fr;
+  gap: 52px;
+  padding: 120px clamp(28px, 7vw, 108px);
+  background: #071f3d;
+  color: white;
+}
+.barrier-system > span {
+  margin: 0;
+}
+.barrier-system h2 {
+  color: white;
+}
+.barrier-system p {
+  color: #b9c7d5;
+}
+.barrier-system ul {
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.barrier-system li {
+  padding: 15px 0;
+  border-top: 1px solid rgba(255,255,255,.15);
+  color: #e7eef2;
+}
+.barrier-contact {
+  padding: 120px 28px;
+  background: #52d6a5;
+  color: #071f3d;
+  text-align: center;
+}
+.barrier-contact > span {
+  margin: 0 0 24px;
+  color: #071f3d;
+}
+.barrier-contact h2 {
+  margin-bottom: 36px;
+  color: #071f3d;
+}
+@media (max-width: 980px) {
+  .barrier-section-head,
+  .barrier-system {
+    grid-template-columns: 1fr;
+  }
+  .barrier-method-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 620px) {
+  .barrier-hero {
+    min-height: 780px;
+  }
+  .barrier-hero > img {
+    object-position: 62% center;
+  }
+  .barrier-hero::after {
+    background: linear-gradient(0deg, rgba(5,22,39,.99) 0%, rgba(5,22,39,.92) 48%, rgba(5,22,39,.12) 100%);
+  }
+  .barrier-hero-copy {
+    width: 100%;
+    padding: 250px 22px 58px;
+  }
+  .barrier-hero h1 {
+    font-size: 48px;
+  }
+  .barrier-hero-copy p {
+    font-size: 16px;
+  }
+  .barrier-methods,
+  .barrier-system {
+    padding: 78px 22px;
+  }
+  .barrier-section-head h2,
+  .barrier-system h2,
+  .barrier-contact h2 {
+    font-size: 40px;
+  }
+  .barrier-contact {
+    padding: 84px 22px;
+  }
+}
 .trust-bar span {
   font-size: 12px;
   color: var(--muted);
