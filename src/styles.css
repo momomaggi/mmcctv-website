@@ -325,6 +325,8 @@ p {
 }
 .trust-bar strong {
   font-size: 16px;
+  line-height: 1.4;
+  min-height: 2.8em;
   color: var(--purple);
 }
 .trust-bar span {
@@ -1734,6 +1736,9 @@ footer > small {
   .trust-bar div {
     padding: 14px;
     border-bottom: 1px solid var(--line);
+  }
+  .trust-bar div:first-child {
+    padding-left: 14px;
   }
   .section {
     padding: 82px 22px;
