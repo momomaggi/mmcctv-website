@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
 const entryModes = [
-  ["01", "อ่านป้ายทะเบียน", "ให้รถที่ลงทะเบียนผ่านเข้า–ออกได้ตามสิทธิ์และช่วงเวลาที่กำหนด"],
-  ["02", "บัตรและรีโมต", "เหมาะกับหมู่บ้าน อาคาร และพื้นที่ที่ต้องการวิธีใช้งานเรียบง่าย"],
-  ["03", "ผู้มาติดต่อ", "ออกแบบจุดแลกบัตร กดเปิด หรือบันทึกข้อมูลตามขั้นตอนของแต่ละหน้างาน"],
+  ["01", "/services/car-park-barrier/method-plate-v1.webp", "อ่านป้ายทะเบียน", "ให้รถที่ลงทะเบียนผ่านเข้า–ออกได้ตามสิทธิ์และช่วงเวลาที่กำหนด"],
+  ["02", "/services/car-park-barrier/method-uhf-v1.webp", "Easy Pass / UHF Tag", "อ่านแท็ก UHF ระยะไกลสำหรับรถประจำ โดยไม่ต้องลดกระจกหรือแตะบัตร"],
+  ["03", "/services/car-park-barrier/method-card-v1.webp", "บัตรและรีโมต", "เหมาะกับหมู่บ้าน อาคาร และพื้นที่ที่ต้องการวิธีใช้งานเรียบง่าย"],
+  ["04", "/services/car-park-barrier/method-visitor-v1.webp", "ผู้มาติดต่อ", "ออกแบบจุดแลกบัตร กดเปิด หรือบันทึกข้อมูลตามขั้นตอนของแต่ละหน้างาน"],
 ];
 
 export default function BarrierPage() {
@@ -60,8 +61,15 @@ export default function BarrierPage() {
           <p>รถประจำและรถผู้มาติดต่อไม่จำเป็นต้องใช้ขั้นตอนเดียวกัน ระบบที่ดีควรลดเวลารอโดยยังตรวจสอบได้</p>
         </div>
         <div className="barrier-method-grid">
-          {entryModes.map(([no, title, text]) => (
-            <article key={no}><span>{no}</span><h3>{title}</h3><p>{text}</p></article>
+          {entryModes.map(([no, image, title, text]) => (
+            <article key={no}>
+              <img src={image} alt="" loading="lazy" />
+              <div className="barrier-method-copy">
+                <span>{no}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            </article>
           ))}
         </div>
       </section>
@@ -82,8 +90,21 @@ export default function BarrierPage() {
       <section className="barrier-contact" id="barrier-contact">
         <span>เริ่มจากข้อมูลช่องทางรถ</span>
         <h2>ส่งรูปทางเข้า จำนวนช่อง<br />และจำนวนรถให้เราดู</h2>
-        <a className="btn white" href="https://line.me/ti/p/~mmcctv">ทัก LINE ID: mmcctv <span>↗</span></a>
+        <a className="btn barrier-line-btn" href="https://line.me/ti/p/~mmcctv">
+          <span className="barrier-line-mark">LINE</span>
+          <span>ทัก LINE ID: mmcctv</span>
+          <span aria-hidden="true">↗</span>
+        </a>
       </section>
+
+      <footer className="detail-footer barrier-footer">
+        <a className="footer-brand" href="/">
+          <img src="/logo-mm-cctv-navy.webp" alt="" />
+          <span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span>
+        </a>
+        <a className="barrier-home-btn" href="/">← กลับหน้าหลัก</a>
+        <small>© 2026 M&amp;M CCTV · ห้างหุ้นส่วนสามัญ เอ็มแอนด์เอ็ม ซีซีทีวี</small>
+      </footer>
     </main>
   );
 }
