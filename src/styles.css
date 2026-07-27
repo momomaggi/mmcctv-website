@@ -2060,32 +2060,35 @@ footer > small {
   position: relative;
   isolation: isolate;
   min-height: calc(100vh - 92px);
-  display: flex;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: 50% 50%;
   overflow: hidden;
   background: var(--access-ink);
 }
 .access-hero-bg,
 .access-hero-shade {
-  position: absolute;
-  z-index: -2;
-  inset: 0;
+  grid-row: 1;
   width: 100%;
   height: 100%;
 }
 .access-hero-bg {
+  position: relative;
+  z-index: 0;
+  grid-column: 2;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: 15% center;
 }
 .access-hero-shade {
-  z-index: -1;
-  background:
-    linear-gradient(90deg, rgba(5, 23, 46, 0.98) 0%, rgba(5, 23, 46, 0.9) 34%, rgba(5, 23, 46, 0.18) 70%),
-    linear-gradient(0deg, rgba(5, 23, 46, 0.72) 0%, transparent 42%);
+  display: none;
 }
 .access-hero-content {
-  width: min(760px, 62%);
-  padding: clamp(76px, 8vw, 130px) clamp(28px, 7vw, 108px);
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  width: auto;
+  padding: clamp(62px, 6vw, 96px) clamp(36px, 6vw, 92px);
   color: white;
 }
 .access-back {
@@ -2105,7 +2108,7 @@ footer > small {
 .access-hero h1 {
   margin: 24px 0 28px;
   color: white;
-  font-size: clamp(58px, 7vw, 104px);
+  font-size: clamp(54px, 5.2vw, 82px);
   line-height: 0.98;
   letter-spacing: -0.065em;
 }
@@ -2116,7 +2119,7 @@ footer > small {
 .access-hero-content > p {
   max-width: 630px;
   color: rgba(255, 255, 255, 0.76);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.8;
 }
 .access-actions {
@@ -2204,7 +2207,7 @@ footer > small {
 .access-section-intro p,
 .access-system-copy > p {
   color: #607084;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8;
 }
 .access-method-grid {
@@ -2272,7 +2275,7 @@ footer > small {
 .access-method-grid p {
   margin: 0;
   color: #607084;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.75;
 }
 .access-system {
@@ -2286,9 +2289,13 @@ footer > small {
   position: relative;
   min-height: 620px;
 }
-.access-system-image > img {
+.access-system-image > picture,
+.access-system-image > picture > img {
+  display: block;
   width: 100%;
   height: 100%;
+}
+.access-system-image > picture > img {
   object-fit: cover;
   object-position: 12% center;
 }
@@ -2312,7 +2319,7 @@ footer > small {
 }
 .access-image-caption p {
   margin: 0;
-  font-size: 11px;
+  font-size: 13px;
 }
 .access-system-copy {
   align-self: center;
@@ -2339,7 +2346,7 @@ footer > small {
   padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.16);
   color: #e8f2f5;
-  font-size: 14px;
+  font-size: 16px;
 }
 .access-system li span {
   margin-right: 12px;
@@ -2347,6 +2354,7 @@ footer > small {
 }
 .access-process {
   background: var(--access-mist);
+  padding-bottom: 64px;
 }
 .attendance-section {
   display: grid;
@@ -2364,7 +2372,7 @@ footer > small {
 }
 .attendance-copy > p {
   color: #607084;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.85;
 }
 .attendance-note {
@@ -2377,11 +2385,11 @@ footer > small {
 }
 .attendance-note strong {
   color: var(--access-cyan);
-  font-size: 12px;
+  font-size: 14px;
 }
 .attendance-note span {
   color: #607084;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.7;
 }
 .attendance-panel {
@@ -2416,7 +2424,7 @@ footer > small {
 }
 .attendance-time span {
   color: #c7d7df;
-  font-size: 13px;
+  font-size: 15px;
 }
 .attendance-feature-list {
   display: grid;
@@ -2444,7 +2452,7 @@ footer > small {
 .attendance-feature-list p {
   margin: 0;
   color: #aebfca;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.65;
 }
 .access-timeline {
@@ -2455,9 +2463,9 @@ footer > small {
 .access-timeline::before {
   position: absolute;
   z-index: 0;
-  top: 81px;
-  left: 46px;
-  right: calc(25% - 46px);
+  top: 6px;
+  left: 12.5%;
+  right: 12.5%;
   height: 1px;
   background: rgba(7, 142, 168, 0.28);
   content: "";
@@ -2465,13 +2473,43 @@ footer > small {
 .access-timeline article {
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   min-height: 260px;
-  padding: 0 28px 28px 0;
+  padding: 0 14px 28px;
+  text-align: center;
+}
+.access-timeline article::before {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  width: 13px;
+  height: 13px;
+  border: 3px solid var(--access-mist);
+  border-radius: 50%;
+  background: var(--access-cyan);
+  content: "";
+  transform: translateX(-50%);
+}
+.access-timeline article::after {
+  position: absolute;
+  z-index: 0;
+  top: 13px;
+  left: 50%;
+  width: 1px;
+  height: 32px;
+  background: rgba(7, 142, 168, 0.3);
+  content: "";
+  transform: translateX(-50%);
 }
 .access-timeline article > span {
+  position: relative;
+  z-index: 2;
   display: block;
-  width: 92px;
-  margin-bottom: 12px;
+  width: 108px;
+  margin: 26px auto 10px;
   color: var(--access-cyan);
   font-size: 12px;
   font-weight: 800;
@@ -2488,24 +2526,24 @@ footer > small {
   z-index: 1;
   display: grid;
   place-items: center;
-  width: 92px;
-  height: 92px;
-  margin: 0;
+  width: 108px;
+  height: 108px;
+  margin: 0 auto;
   border: 1px solid rgba(7, 142, 168, 0.28);
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 14px 32px rgba(7, 31, 61, 0.1);
+  box-shadow: 0 10px 22px rgba(7, 31, 61, 0.09);
   transition: transform 0.24s ease, box-shadow 0.24s ease;
 }
 .access-timeline article:hover .access-step-icon {
-  box-shadow: 0 18px 36px rgba(7, 31, 61, 0.14);
+  box-shadow: 0 14px 28px rgba(7, 31, 61, 0.12);
   transform: translateY(-4px);
 }
 .access-step-icon svg {
   position: relative;
   z-index: 1;
-  width: 38px;
-  height: 38px;
+  width: 46px;
+  height: 46px;
   fill: none;
   stroke: #071f3d;
   stroke-width: 1.8;
@@ -2513,23 +2551,41 @@ footer > small {
   stroke-linejoin: round;
 }
 .access-timeline p {
-  max-width: 220px;
-  margin: 8px 0 0;
-  color: #64748b;
-  font-size: 15px;
+  max-width: 225px;
+  margin: 8px auto 0;
+  color: #56677a;
+  font-size: 16px;
   line-height: 1.65;
 }
 .access-process .access-section-intro > div {
   align-items: center;
 }
-.access-process .access-section-intro > div > p {
+.access-process-summary {
+  max-width: 420px;
   transform: translateY(20px);
 }
-.access-timeline p {
-  max-width: 250px;
-  color: #607084;
-  font-size: 14px;
-  line-height: 1.7;
+.access-process-summary > span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: var(--access-cyan);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+.access-process-summary > span::before {
+  width: 34px;
+  height: 2px;
+  background: var(--access-cyan);
+  content: "";
+}
+.access-process-summary p {
+  max-width: 390px;
+  margin: 0;
+  color: #56677a;
+  font-size: 17px;
+  line-height: 1.8;
 }
 .access-contact {
   padding: 120px clamp(28px, 12vw, 180px);
@@ -2548,6 +2604,7 @@ footer > small {
   max-width: 690px;
   margin: 0 auto;
   color: #b9c7d5;
+  font-size: 18px;
   line-height: 1.8;
 }
 .access-contact-actions {
@@ -2573,6 +2630,25 @@ footer > small {
 }
 
 @media (max-width: 980px) {
+  .access-hero {
+    display: flex;
+    align-items: flex-end;
+  }
+  .access-hero-bg,
+  .access-hero-shade {
+    position: absolute;
+    inset: 0;
+  }
+  .access-hero-bg {
+    z-index: -2;
+  }
+  .access-hero-shade {
+    z-index: -1;
+    display: block;
+    background:
+      linear-gradient(90deg, rgba(5, 23, 46, 0.98) 0%, rgba(5, 23, 46, 0.88) 42%, rgba(5, 23, 46, 0.18) 82%),
+      linear-gradient(0deg, rgba(5, 23, 46, 0.72) 0%, transparent 42%);
+  }
   .access-hero-content {
     width: 75%;
   }
@@ -2610,19 +2686,29 @@ footer > small {
 
 @media (max-width: 620px) {
   .access-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 380px auto;
     min-height: 780px;
-    align-items: flex-end;
+    align-items: stretch;
   }
   .access-hero-bg {
-    object-position: 58% center;
+    position: relative;
+    z-index: 0;
+    grid-column: 1;
+    grid-row: 1;
+    inset: auto;
+    object-position: 15% center;
   }
   .access-hero-shade {
-    background:
-      linear-gradient(0deg, rgba(5, 23, 46, 0.99) 0%, rgba(5, 23, 46, 0.9) 48%, rgba(5, 23, 46, 0.08) 100%);
+    display: none;
   }
   .access-hero-content {
+    grid-column: 1;
+    grid-row: 2;
     width: 100%;
-    padding: 220px 22px 58px;
+    padding: 50px 22px 58px;
+    background: var(--access-ink);
   }
   .access-back {
     margin-bottom: 38px;
@@ -2664,7 +2750,11 @@ footer > small {
     min-height: 320px;
   }
   .access-system-image {
-    min-height: 470px;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+  .access-system-image > picture > img {
+    object-position: center;
   }
   .access-image-caption {
     grid-template-columns: auto 1fr;
@@ -2676,6 +2766,18 @@ footer > small {
     grid-template-columns: 1fr;
     gap: 8px;
   }
+  .attendance-copy > p,
+  .access-section-intro p,
+  .access-system-copy > p,
+  .access-contact > p {
+    font-size: 16px;
+  }
+  .access-method-grid p,
+  .access-system li,
+  .attendance-note span,
+  .attendance-feature-list p {
+    font-size: 14px;
+  }
   .attendance-time {
     align-items: flex-start;
     flex-direction: column;
@@ -2686,24 +2788,29 @@ footer > small {
   .access-timeline::before {
     top: 28px;
     bottom: 50px;
-    left: 45px;
+    left: 54px;
     right: auto;
     width: 1px;
     height: auto;
   }
   .access-timeline article {
     display: grid;
-    grid-template-columns: 92px 1fr;
+    grid-template-columns: 108px 1fr;
     gap: 20px;
     min-height: 170px;
     padding-right: 0;
+    text-align: left;
+  }
+  .access-timeline article::before,
+  .access-timeline article::after {
+    display: none;
   }
   .access-timeline article > span {
     position: absolute;
     z-index: 2;
     top: -4px;
     left: 0;
-    width: 92px;
+    width: 108px;
     margin: 0;
   }
   .access-step-icon {
@@ -2720,7 +2827,7 @@ footer > small {
   .access-timeline p {
     margin-left: 0;
   }
-  .access-process .access-section-intro > div > p {
+  .access-process-summary {
     transform: none;
   }
   .access-contact {

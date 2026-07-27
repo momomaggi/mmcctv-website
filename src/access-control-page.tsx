@@ -34,6 +34,10 @@ const attendanceFeatures = [
     title: "ดูและส่งออกรายงาน",
     text: "ตรวจสอบข้อมูลมาสาย ขาดงาน หรือเวลาเข้า–ออก และส่งออกไปใช้งานต่อได้ในรุ่นที่รองรับ",
   },
+  {
+    title: "เช็กอินผ่านมือถือและ GPS",
+    text: "บันทึกพิกัดขณะลงเวลา หรือกำหนด Geofence ให้เช็กอินได้เฉพาะพื้นที่ที่อนุญาตตามแพลตฟอร์มที่เลือกใช้",
+  },
 ];
 
 const projectSteps = [
@@ -229,11 +233,17 @@ export default function AccessControlPage() {
 
       <section className="access-system" id="access-system">
         <div className="access-system-image">
-          <img
-            src="/services/access-control/access-control-system-v3.webp"
-            alt="เครื่องสแกนใบหน้าและประตูกระจกในสำนักงาน"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              media="(max-width: 620px)"
+              srcSet="/services/access-control/access-control-system-mobile-v1.webp"
+            />
+            <img
+              src="/services/access-control/access-control-system-v3.webp"
+              alt="เครื่องสแกนใบหน้าและประตูกระจกในสำนักงาน"
+              loading="lazy"
+            />
+          </picture>
           <div className="access-image-caption">
             <span>01</span>
             <p>เครื่องอ่านและยืนยันตัวตน</p>
@@ -267,12 +277,14 @@ export default function AccessControlPage() {
           <p>
             สำหรับสำนักงานและโรงงานที่ต้องการมากกว่าการเปิดประตู
             สามารถออกแบบเครื่องสแกนให้ใช้ยืนยันตัวตนและบันทึกเวลาเข้า–ออกได้
+            หรือเพิ่มการเช็กอินผ่านมือถือพร้อมพิกัด GPS สำหรับพนักงานนอกสถานที่และหลายสาขา
             โดยเลือกรุ่นและซอฟต์แวร์ให้เหมาะกับจำนวนพนักงาน กะงาน และรูปแบบรายงานที่ต้องการ
           </p>
           <div className="attendance-note">
             <strong>ควรรู้ก่อนเลือกระบบ</strong>
             <span>
               ระบบ Access Control เน้นสิทธิ์ผ่านประตู ส่วน Time Attendance เน้นข้อมูลเวลาทำงาน
+              ส่วน GPS และ Geofence เหมาะกับงานนอกสถานที่ แต่ต้องอาศัยสิทธิ์ตำแหน่งและสัญญาณ GPS
               ฟังก์ชันรายงานและการเชื่อมต่อโปรแกรมเงินเดือนขึ้นอยู่กับรุ่นและซอฟต์แวร์
             </span>
           </div>
@@ -305,10 +317,13 @@ export default function AccessControlPage() {
           <span className="access-index">04 / INSTALL</span>
           <div>
             <h2>จากประตูหนึ่งบาน<br />สู่ระบบที่ใช้งานได้จริง</h2>
-            <p>
-              เริ่มจากสำรวจหน้างานก่อนเลือกอุปกรณ์ เพื่อให้ระบบเหมาะกับชนิดประตู
-              จำนวนผู้ใช้ และวิธีบริหารงานของแต่ละสถานที่
-            </p>
+            <div className="access-process-summary">
+              <span>PROCESS</span>
+              <p>
+                เริ่มจากสำรวจหน้างานก่อนเลือกอุปกรณ์ เพื่อให้ระบบเหมาะกับชนิดประตู
+                จำนวนผู้ใช้ และวิธีบริหารงานของแต่ละสถานที่
+              </p>
+            </div>
           </div>
         </div>
         <div className="access-timeline">
