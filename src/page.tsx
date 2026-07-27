@@ -204,7 +204,7 @@ const scrollReviews = (direction: "previous" | "next") => {
     <main>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="M&M CCTV หน้าแรก">
-          <img src="/logo-mm-cctv.webp" alt="M&M CCTV" />
+          <img src="/logo-mm-cctv-navy.webp" alt="M&M CCTV" />
           <span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span>
         </a>
         <button
@@ -691,7 +691,7 @@ const scrollReviews = (direction: "previous" | "next") => {
       <footer>
   <a className="footer-brand" href="#top">
     <img
-      src="/logo-mm-cctv.webp"
+      src="/logo-mm-cctv-navy.webp"
       alt="M&M CCTV"
     />
 

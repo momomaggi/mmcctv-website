@@ -47,7 +47,7 @@ export default function CctvPage() {
     <main className="service-detail-page">
       <header className="site-header">
         <a className="brand" href="/" aria-label="กลับหน้าหลัก M&M CCTV">
-          <img src="/logo-mm-cctv.webp" alt="M&M CCTV" />
+          <img src="/logo-mm-cctv-navy.webp" alt="M&M CCTV" />
           <span>
             <strong>M&amp;M CCTV</strong>
             <small>SMART SECURITY FOR YOUR LIFE</small>
@@ -220,7 +220,7 @@ export default function CctvPage() {
 
       <footer className="detail-footer">
         <a className="footer-brand" href="/">
-          <img src="/logo-mm-cctv.webp" alt="" />
+          <img src="/logo-mm-cctv-navy.webp" alt="" />
           <span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span>
         </a>
         <a href="/">กลับหน้าหลัก</a>
