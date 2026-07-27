@@ -1,0 +1,23 @@
+# Dependencies and package-manager cache
+node_modules/
+.pnpm-store/
+pnpm-lock.yaml
+
+# Generated build output and tool caches
+dist/
+.vite/
+
+# Local temporary files
+tmp/
+*.log
+
+# Local environment overrides
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
