@@ -102,7 +102,7 @@ export default function BarrierPage() {
           <img src="/logo-mm-cctv-navy.webp" alt="" />
           <span><strong>M&amp;M CCTV</strong><small>SMART SECURITY FOR YOUR LIFE</small></span>
         </a>
-        <a className="barrier-home-btn" href="/">← กลับหน้าหลัก</a>
+        <a href="/">กลับหน้าหลัก</a>
         <small>© 2026 M&amp;M CCTV · ห้างหุ้นส่วนสามัญ เอ็มแอนด์เอ็ม ซีซีทีวี</small>
       </footer>
     </main>

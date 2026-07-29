@@ -211,8 +211,10 @@ export default function CctvPage() {
           <p>บอกประเภทสถานที่ จำนวนจุดที่ต้องการดู และงบประมาณคร่าว ๆ เพื่อรับคำแนะนำที่เหมาะกับหน้างาน</p>
         </div>
         <div className="cctv-contact-actions">
-          <a className="btn white" href="https://line.me/ti/p/~mmcctv">
-            ทัก LINE ID: mmcctv <span>↗</span>
+          <a className="btn white cctv-line-btn" href="https://line.me/ti/p/~mmcctv">
+            <span className="cctv-line-mark" aria-hidden="true">LINE</span>
+            <span>ทัก LINE ID: mmcctv</span>
+            <span aria-hidden="true">↗</span>
           </a>
           <a className="detail-phone" href="tel:0991236879">โทร 099-123-6879</a>
         </div>

@@ -572,21 +572,6 @@ p {
   grid-column: 1 / -1;
   color: #9fb1bf;
 }
-.barrier-home-btn {
-  display: inline-flex;
-  align-items: center;
-  align-self: center;
-  padding: 13px 20px;
-  border: 1px solid rgba(82, 214, 165, 0.55);
-  color: white;
-  font-weight: 700;
-  transition: border-color .2s ease, background .2s ease;
-}
-.barrier-home-btn:hover {
-  border-color: #52d6a5;
-  background: rgba(82, 214, 165, 0.1);
-  color: white;
-}
 @media (max-width: 980px) {
   .barrier-section-head,
   .barrier-system {
@@ -630,10 +615,6 @@ p {
   }
   .barrier-footer {
     grid-template-columns: 1fr;
-  }
-  .barrier-home-btn {
-    justify-content: center;
-    width: 100%;
   }
 }
 .trust-bar span {
@@ -3501,6 +3482,44 @@ footer > small {
 }
 .cctv-contact-actions .btn {
   margin-top: 0;
+}
+.cctv-contact-actions .cctv-line-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border-color: #06c755;
+  background: #06c755;
+  color: white;
+  box-shadow: 0 14px 30px rgba(6, 199, 85, 0.2);
+}
+.cctv-contact-actions .cctv-line-btn:hover {
+  border-color: #08b94f;
+  background: #08b94f;
+  color: white;
+}
+.cctv-line-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 30px;
+  border-radius: 9px;
+  background: white;
+  color: #06c755;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.cctv-line-mark::after {
+  position: absolute;
+  right: 3px;
+  bottom: -5px;
+  width: 8px;
+  height: 8px;
+  background: white;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  content: "";
 }
 .detail-phone {
   padding: 18px;
