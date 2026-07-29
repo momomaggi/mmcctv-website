@@ -5,9 +5,12 @@ import CctvPage from "./cctv-page";
 import AccessControlPage from "./access-control-page";
 import BarrierPage from "./barrier-page";
 import MaintenancePage from "./maintenance-page";
+import { applyPageMetadata } from "./metadata";
 import "./styles.css";
 
 const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
+applyPageMetadata(normalizedPath);
+
 const CurrentPage =
   normalizedPath === "/services/cctv"
     ? CctvPage

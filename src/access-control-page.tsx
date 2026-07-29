@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const accessMethods = [
   {
@@ -154,14 +154,6 @@ function InstallStepIcon({ step }: { step: string }) {
 export default function AccessControlPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
-
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "ติดตั้งระบบ Access Control และเครื่องสแกนใบหน้า | M&M CCTV";
-    return () => {
-      document.title = previousTitle;
-    };
-  }, []);
 
   return (
     <main className="access-page">

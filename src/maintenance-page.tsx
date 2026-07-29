@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const maintenanceScope = [
   ["01", "/services/maintenance/scope-camera-v1.png", "กล้องและภาพ", "ตรวจความคมชัด มุมภาพ อินฟราเรด เลนส์ และคราบสกปรกที่กระทบการมองเห็น"],
@@ -55,14 +55,6 @@ function MaintenanceStepIcon({ step }: { step: string }) {
 
 export default function MaintenancePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "บริการดูแลและบำรุงรักษาระบบ CCTV | M&M CCTV";
-    return () => {
-      document.title = previousTitle;
-    };
-  }, []);
 
   const closeMenu = () => setIsMenuOpen(false);
 

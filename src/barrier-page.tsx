@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const entryModes = [
   ["01", "/services/car-park-barrier/method-plate-v1.webp", "อ่านป้ายทะเบียน", "ให้รถที่ลงทะเบียนผ่านเข้า–ออกได้ตามสิทธิ์และช่วงเวลาที่กำหนด"],
@@ -9,14 +9,6 @@ const entryModes = [
 
 export default function BarrierPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "ติดตั้งไม้กั้นรถยนต์และระบบอ่านป้ายทะเบียน | M&M CCTV";
-    return () => {
-      document.title = previousTitle;
-    };
-  }, []);
 
   return (
     <main className="barrier-page">
