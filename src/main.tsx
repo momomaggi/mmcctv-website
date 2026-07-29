@@ -4,6 +4,7 @@ import Home from "./page";
 import CctvPage from "./cctv-page";
 import AccessControlPage from "./access-control-page";
 import BarrierPage from "./barrier-page";
+import MaintenancePage from "./maintenance-page";
 import "./styles.css";
 
 const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
@@ -14,6 +15,8 @@ const CurrentPage =
       ? AccessControlPage
       : normalizedPath === "/services/car-park-barrier"
         ? BarrierPage
+        : normalizedPath === "/services/maintenance"
+          ? MaintenancePage
       : Home;
 
 createRoot(document.getElementById("root")!).render(
