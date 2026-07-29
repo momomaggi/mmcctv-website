@@ -98,34 +98,91 @@ export function createPageStructuredData(metadata) {
 
   const canonical = getCanonicalUrl(metadata);
   const image = getAbsoluteImageUrl(metadata);
+  const pageName = metadata.title.replace(" | M&M CCTV", "");
+  const primaryImageId = `${canonical}#primaryimage`;
+  const webPageId = `${canonical}#webpage`;
+  const imageObject = {
+    "@type": "ImageObject",
+    "@id": primaryImageId,
+    url: image,
+    contentUrl: image,
+    width: metadata.imageWidth,
+    height: metadata.imageHeight,
+    caption: metadata.imageAlt,
+  };
+  const webPage = {
+    "@type": "WebPage",
+    "@id": webPageId,
+    url: canonical,
+    name: pageName,
+    description: metadata.description,
+    inLanguage: "th-TH",
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    primaryImageOfPage: { "@id": primaryImageId },
+  };
 
   if (!metadata.serviceType) {
     return {
       "@context": "https://schema.org",
-      "@type": "WebSite",
-      "@id": `${SITE_URL}/#website`,
-      url: `${SITE_URL}/`,
-      name: "M&M CCTV",
-      inLanguage: "th-TH",
-      publisher: { "@id": ORGANIZATION_ID },
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${SITE_URL}/#website`,
+          url: `${SITE_URL}/`,
+          name: "M&M CCTV",
+          inLanguage: "th-TH",
+          publisher: { "@id": ORGANIZATION_ID },
+        },
+        webPage,
+        imageObject,
+      ],
     };
   }
 
+  const serviceId = `${canonical}#service`;
+  const breadcrumbId = `${canonical}#breadcrumb`;
+  webPage.breadcrumb = { "@id": breadcrumbId };
+  webPage.about = { "@id": serviceId };
+
   return {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${canonical}#service`,
-    name: metadata.title.replace(" | M&M CCTV", ""),
-    serviceType: metadata.serviceType,
-    description: metadata.description,
-    url: canonical,
-    image,
-    inLanguage: "th-TH",
-    isPartOf: { "@id": `${SITE_URL}/#website` },
-    provider: { "@id": ORGANIZATION_ID },
-    areaServed: ["ฉะเชิงเทรา", "ปราจีนบุรี", "นครนายก", "ชลบุรี", "สมุทรปราการ"].map((name) => ({
-      "@type": "AdministrativeArea",
-      name,
-    })),
+    "@graph": [
+      webPage,
+      imageObject,
+      {
+        "@type": "BreadcrumbList",
+        "@id": breadcrumbId,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "M&M CCTV",
+            item: `${SITE_URL}/`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: pageName,
+            item: canonical,
+          },
+        ],
+      },
+      {
+        "@type": "Service",
+        "@id": serviceId,
+        name: pageName,
+        serviceType: metadata.serviceType,
+        description: metadata.description,
+        url: canonical,
+        image: { "@id": primaryImageId },
+        mainEntityOfPage: { "@id": webPageId },
+        inLanguage: "th-TH",
+        provider: { "@id": ORGANIZATION_ID },
+        areaServed: ["ฉะเชิงเทรา", "ปราจีนบุรี", "นครนายก", "ชลบุรี", "สมุทรปราการ"].map((name) => ({
+          "@type": "AdministrativeArea",
+          name,
+        })),
+      },
+    ],
   };
 }
