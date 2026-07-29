@@ -33,6 +33,12 @@ export function applyPageMetadata(pathname: string) {
   document.documentElement.lang = "th";
   document.title = metadata.title;
   setMeta('meta[name="description"]', "name", "description", metadata.description);
+  setMeta(
+    'meta[name="robots"]',
+    "name",
+    "robots",
+    metadata.noindex ? "noindex, nofollow" : "index, follow",
+  );
   setCanonical(canonical);
 
   setMeta('meta[property="og:type"]', "property", "og:type", "website");
@@ -54,12 +60,17 @@ export function applyPageMetadata(pathname: string) {
   setMeta('meta[name="twitter:image"]', "name", "twitter:image", image);
   setMeta('meta[name="twitter:image:alt"]', "name", "twitter:image:alt", metadata.imageAlt);
 
+  const structuredDataValue = createPageStructuredData(metadata);
   let structuredData = document.head.querySelector<HTMLScriptElement>("#page-structured-data");
-  if (!structuredData) {
-    structuredData = document.createElement("script");
-    structuredData.id = "page-structured-data";
-    structuredData.type = "application/ld+json";
-    document.head.appendChild(structuredData);
+  if (!structuredDataValue) {
+    structuredData?.remove();
+  } else {
+    if (!structuredData) {
+      structuredData = document.createElement("script");
+      structuredData.id = "page-structured-data";
+      structuredData.type = "application/ld+json";
+      document.head.appendChild(structuredData);
+    }
+    structuredData.textContent = JSON.stringify(structuredDataValue);
   }
-  structuredData.textContent = JSON.stringify(createPageStructuredData(metadata));
 }

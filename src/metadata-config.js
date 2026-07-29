@@ -63,12 +63,24 @@ export const pageMetadata = {
   },
 };
 
+export const notFoundMetadata = {
+  title: "ไม่พบหน้าที่ต้องการ | M&M CCTV",
+  description: "ไม่พบหน้าที่คุณกำลังค้นหา เลือกกลับหน้าแรกหรือดูบริการหลักของ M&M CCTV",
+  path: "/404",
+  image: "/hero-installation-modern-v3.webp",
+  imageAlt: "M&M CCTV ระบบรักษาความปลอดภัยครบวงจร",
+  imageWidth: 1672,
+  imageHeight: 941,
+  imageType: "image/webp",
+  noindex: true,
+};
+
 export function normalizeMetadataPath(pathname) {
   return pathname.replace(/\/+$/, "") || "/";
 }
 
 export function getPageMetadata(pathname) {
-  return pageMetadata[normalizeMetadataPath(pathname)] ?? pageMetadata["/"];
+  return pageMetadata[normalizeMetadataPath(pathname)] ?? notFoundMetadata;
 }
 
 export function getCanonicalUrl(metadata) {
@@ -80,6 +92,10 @@ export function getAbsoluteImageUrl(metadata) {
 }
 
 export function createPageStructuredData(metadata) {
+  if (metadata.noindex) {
+    return null;
+  }
+
   const canonical = getCanonicalUrl(metadata);
   const image = getAbsoluteImageUrl(metadata);
 

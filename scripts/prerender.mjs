@@ -4,6 +4,7 @@ import {
   createPageStructuredData,
   getAbsoluteImageUrl,
   getCanonicalUrl,
+  notFoundMetadata,
   pageMetadata,
 } from "../src/metadata-config.js";
 
@@ -45,6 +46,12 @@ function renderPage(metadata) {
   let html = replaceTitle(template, metadata.title);
 
   html = replaceMeta(html, "name", "description", metadata.description);
+  html = replaceMeta(
+    html,
+    "name",
+    "robots",
+    metadata.noindex ? "noindex, nofollow" : "index, follow",
+  );
   html = replaceCanonical(html, canonical);
   html = replaceMeta(html, "property", "og:type", "website");
   html = replaceMeta(html, "property", "og:locale", "th_TH");
@@ -64,7 +71,8 @@ function renderPage(metadata) {
   html = replaceMeta(html, "name", "twitter:image", image);
   html = replaceMeta(html, "name", "twitter:image:alt", metadata.imageAlt);
 
-  return addPageStructuredData(html, createPageStructuredData(metadata));
+  const structuredData = createPageStructuredData(metadata);
+  return structuredData ? addPageStructuredData(html, structuredData) : html;
 }
 
 for (const metadata of Object.values(pageMetadata)) {
@@ -77,6 +85,13 @@ for (const metadata of Object.values(pageMetadata)) {
   await writeFile(outputPath, renderPage(metadata), "utf8");
   console.log(`prerendered ${metadata.path}`);
 }
+
+await writeFile(
+  join(distDirectory, "404.html"),
+  renderPage(notFoundMetadata),
+  "utf8",
+);
+console.log("prerendered /404");
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

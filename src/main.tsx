@@ -5,22 +5,22 @@ import CctvPage from "./cctv-page";
 import AccessControlPage from "./access-control-page";
 import BarrierPage from "./barrier-page";
 import MaintenancePage from "./maintenance-page";
+import NotFoundPage from "./not-found-page";
 import { applyPageMetadata } from "./metadata";
 import "./styles.css";
 
 const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
 applyPageMetadata(normalizedPath);
 
-const CurrentPage =
-  normalizedPath === "/services/cctv"
-    ? CctvPage
-    : normalizedPath === "/services/access-control"
-      ? AccessControlPage
-      : normalizedPath === "/services/car-park-barrier"
-        ? BarrierPage
-        : normalizedPath === "/services/maintenance"
-          ? MaintenancePage
-      : Home;
+const routes: Record<string, React.ComponentType> = {
+  "/": Home,
+  "/services/cctv": CctvPage,
+  "/services/access-control": AccessControlPage,
+  "/services/car-park-barrier": BarrierPage,
+  "/services/maintenance": MaintenancePage,
+};
+
+const CurrentPage = routes[normalizedPath] ?? NotFoundPage;
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
