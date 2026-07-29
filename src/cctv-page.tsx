@@ -79,7 +79,6 @@ export default function CctvPage() {
       <section className="cctv-hero" id="top">
         <div className="cctv-hero-copy">
           <a className="detail-back" href="/">← กลับหน้าหลัก</a>
-          <span className="kicker">บริการติดตั้งกล้องวงจรปิด</span>
           <h1>
             เห็นชัดทุกจุดสำคัญ
             <br />
