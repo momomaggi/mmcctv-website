@@ -789,9 +789,10 @@ p {
   }
   .barrier-hero > img {
     object-position: 62% center;
+    filter: brightness(1.18) saturate(.96);
   }
   .barrier-hero::after {
-    background: linear-gradient(0deg, rgba(5,22,39,.99) 0%, rgba(5,22,39,.92) 48%, rgba(5,22,39,.12) 100%);
+    background: linear-gradient(0deg, rgba(5,22,39,.88) 0%, rgba(5,22,39,.68) 48%, rgba(5,22,39,.06) 100%);
   }
   .barrier-hero-copy {
     width: 100%;
