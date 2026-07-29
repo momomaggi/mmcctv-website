@@ -674,11 +674,20 @@ p {
   font-size: 12px;
   color: var(--violet);
 }
+.service-image-frame {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
 .service-image {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: 100%;
   object-fit: cover;
+}
+.service-image-barrier {
+  transform: scale(1.15);
+  transform-origin: 50% 42%;
 }
 .service-grid h3 {
   font-size: 22px;

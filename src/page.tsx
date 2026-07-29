@@ -28,9 +28,9 @@ const promotions = [
   },
 ];
 const services = [
-  { no: "01", image: "/service-previews/01-cctv-vigi-c320.webp", title: "กล้องวงจรปิด", text: "ออกแบบและติดตั้งระบบ IP Camera และ HDTVI สำหรับบ้าน ร้านค้า ออฟฟิศ และโรงงาน" },
-  { no: "02", image: "/service-previews/02-access-senseface2a.webp", title: "ระบบควบคุมเข้า–ออก", text: "เครื่องสแกนใบหน้า ลายนิ้วมือ และระบบล็อกประตูที่จัดการได้อย่างเป็นระบบ" },
-  { no: "03", image: "/service-previews/03-barrier-hikvision-anpr.webp", title: "ระบบไม้กั้นรถยนต์", text: "ไม้กั้นพร้อมกล้องอ่านป้ายทะเบียน AI เพิ่มความสะดวกและความปลอดภัยให้ทุกพื้นที่" },
+  { no: "01", image: "/service-previews/01-cctv-hikvision-junction-v2.png", title: "กล้องวงจรปิด", text: "ออกแบบและติดตั้งระบบ IP Camera และ HDTVI สำหรับบ้าน ร้านค้า ออฟฟิศ และโรงงาน" },
+  { no: "02", image: "/service-previews/02-access-smartac1-v3.png", title: "ระบบควบคุมเข้า–ออก", text: "เครื่องสแกนใบหน้า ลายนิ้วมือ และระบบล็อกประตูที่จัดการได้อย่างเป็นระบบ" },
+  { no: "03", image: "/service-previews/03-barrier-hikvision-layout-v3.png", title: "ระบบไม้กั้นรถยนต์", text: "ไม้กั้นพร้อมกล้องอ่านป้ายทะเบียน AI เพิ่มความสะดวกและความปลอดภัยให้ทุกพื้นที่" },
   { no: "04", image: "/service-previews/04-ma-maintenance-hospital-factory-v2.webp", title: "บริการดูแลระบบ MA", text: "ตรวจเช็ก บำรุงรักษา และแก้ไขปัญหาระบบเดิม พร้อมรายงานผลโดยทีมช่าง" },
 ];
 const steps = [
@@ -283,7 +283,7 @@ const scrollReviews = (direction: "previous" | "next") => {
 </section>
       <section className="section services" id="services">
         <div className="section-head"><div><span className="kicker">บริการของเรา</span><h2>ระบบรักษาความปลอดภัย<br/>ที่ออกแบบให้เหมาะกับคุณ</h2></div><p>เราไม่ได้เริ่มจากการขายอุปกรณ์ แต่เริ่มจากการทำความเข้าใจพื้นที่ เพื่อให้ได้ระบบที่ใช้งานจริงและดูแลง่ายในระยะยาว</p></div>
-        <div className="service-grid">{services.map((s)=><article key={s.no}><img className="service-image" src={s.image} alt={s.title} loading="lazy"/><span className="number">{s.no}</span><h3>{s.title}</h3><p>{s.text}</p><a href={s.no === "01" ? "/services/cctv" : s.no === "02" ? "/services/access-control" : s.no === "03" ? "/services/car-park-barrier" : "/services/maintenance"}>ดูรายละเอียด <b>↗</b></a></article>)}</div>
+        <div className="service-grid">{services.map((s)=><article key={s.no}><div className="service-image-frame"><img className={`service-image${s.no === "03" ? " service-image-barrier" : ""}`} src={s.image} alt={s.title} loading="lazy"/></div><span className="number">{s.no}</span><h3>{s.title}</h3><p>{s.text}</p><a href={s.no === "01" ? "/services/cctv" : s.no === "02" ? "/services/access-control" : s.no === "03" ? "/services/car-park-barrier" : "/services/maintenance"}>ดูรายละเอียด <b>↗</b></a></article>)}</div>
       </section>
 
 <section className="promo" id="promotions">
