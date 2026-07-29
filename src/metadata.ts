@@ -37,7 +37,9 @@ export function applyPageMetadata(pathname: string) {
     'meta[name="robots"]',
     "name",
     "robots",
-    metadata.noindex ? "noindex, nofollow" : "index, follow",
+    metadata.noindex
+      ? "noindex, nofollow"
+      : "index, follow, max-image-preview:large",
   );
   setCanonical(canonical);
 

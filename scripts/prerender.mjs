@@ -50,7 +50,9 @@ function renderPage(metadata) {
     html,
     "name",
     "robots",
-    metadata.noindex ? "noindex, nofollow" : "index, follow",
+    metadata.noindex
+      ? "noindex, nofollow"
+      : "index, follow, max-image-preview:large",
   );
   html = replaceCanonical(html, canonical);
   html = replaceMeta(html, "property", "og:type", "website");
