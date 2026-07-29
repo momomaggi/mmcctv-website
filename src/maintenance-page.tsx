@@ -87,7 +87,11 @@ export default function MaintenancePage() {
       <section className="maintenance-hero">
         <img src="/services/maintenance/maintenance-hero-v2.png" alt="ช่างตรวจเช็กกล้องวงจรปิดและตู้ระบบเครือข่าย" />
         <div className="maintenance-hero-copy">
-          <a href="/">← กลับหน้าหลัก</a>
+          <nav className="service-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">หน้าแรก</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">บริการดูแลระบบ</span>
+          </nav>
           <span>MAINTENANCE &amp; SYSTEM CARE</span>
           <h1>ให้ระบบพร้อมใช้<br /><em>ก่อนปัญหาจะเกิด</em></h1>
           <p>ตรวจเช็ก บำรุงรักษา และแก้ปัญหาระบบเดิมอย่างเป็นขั้นตอน พร้อมรายงานสิ่งที่พบ เพื่อให้คุณวางแผนซ่อมหรือเปลี่ยนอุปกรณ์ได้ตรงจุด</p>

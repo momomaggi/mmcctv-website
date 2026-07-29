@@ -39,7 +39,11 @@ export default function BarrierPage() {
       <section className="barrier-hero">
         <img src="/services/car-park-barrier/barrier-hero-v3.png" alt="ไม้กั้นรถยนต์และกล้องอ่านป้ายทะเบียนบริเวณทางเข้าโครงการ" />
         <div className="barrier-hero-copy">
-          <a href="/">← กลับหน้าหลัก</a>
+          <nav className="service-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">หน้าแรก</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">ระบบไม้กั้นรถยนต์</span>
+          </nav>
           <span>VEHICLE ACCESS SOLUTIONS</span>
           <h1>ให้รถผ่านได้<br /><em>โดยไม่ทำให้ทางเข้าติดขัด</em></h1>
           <p>ออกแบบไม้กั้นรถยนต์ กล้องอ่านป้ายทะเบียน และวิธีบริหารรถเข้า–ออกให้เหมาะกับจำนวนรถ ความเร็วของช่องทาง และขั้นตอนรักษาความปลอดภัย</p>

@@ -197,7 +197,11 @@ export default function AccessControlPage() {
         />
         <div className="access-hero-shade" />
         <div className="access-hero-content">
-          <a className="access-back" href="/">← กลับหน้าหลัก</a>
+          <nav className="service-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">หน้าแรก</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">ระบบควบคุมเข้า–ออก</span>
+          </nav>
           <span className="access-eyebrow">ACCESS CONTROL SOLUTIONS</span>
           <h1>
             ให้สิทธิ์เฉพาะคน

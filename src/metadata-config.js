@@ -23,6 +23,7 @@ export const pageMetadata = {
     imageWidth: 1600,
     imageHeight: 1600,
     imageType: "image/webp",
+    breadcrumbName: "กล้องวงจรปิด",
     serviceType: "บริการออกแบบและติดตั้งระบบกล้องวงจรปิด",
   },
   "/services/access-control": {
@@ -35,6 +36,7 @@ export const pageMetadata = {
     imageWidth: 1182,
     imageHeight: 1330,
     imageType: "image/webp",
+    breadcrumbName: "ระบบควบคุมเข้า–ออก",
     serviceType: "บริการออกแบบและติดตั้งระบบควบคุมการเข้า–ออก",
   },
   "/services/car-park-barrier": {
@@ -47,6 +49,7 @@ export const pageMetadata = {
     imageWidth: 1672,
     imageHeight: 941,
     imageType: "image/png",
+    breadcrumbName: "ระบบไม้กั้นรถยนต์",
     serviceType: "บริการติดตั้งไม้กั้นรถยนต์และระบบอ่านป้ายทะเบียน",
   },
   "/services/maintenance": {
@@ -59,6 +62,7 @@ export const pageMetadata = {
     imageWidth: 1536,
     imageHeight: 1024,
     imageType: "image/png",
+    breadcrumbName: "บริการดูแลระบบ",
     serviceType: "บริการตรวจเช็กและบำรุงรักษาระบบ CCTV",
   },
 };
@@ -162,7 +166,7 @@ export function createPageStructuredData(metadata) {
           {
             "@type": "ListItem",
             position: 2,
-            name: pageName,
+            name: metadata.breadcrumbName ?? pageName,
             item: canonical,
           },
         ],

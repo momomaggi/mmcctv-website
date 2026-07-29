@@ -78,7 +78,11 @@ export default function CctvPage() {
 
       <section className="cctv-hero" id="top">
         <div className="cctv-hero-copy">
-          <a className="detail-back" href="/">← กลับหน้าหลัก</a>
+          <nav className="service-breadcrumb" aria-label="Breadcrumb">
+            <a href="/">หน้าแรก</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">กล้องวงจรปิด</span>
+          </nav>
           <h1>
             เห็นชัดทุกจุดสำคัญ
             <br />
