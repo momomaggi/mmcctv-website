@@ -1,13 +1,15 @@
 import type { CaseStudyProject } from "./types";
+import { homeCctvPrachinburiRegistry } from "./registry.js";
 
 const imageRoot = "/case-studies/home-cctv-prachinburi";
+const registry = homeCctvPrachinburiRegistry;
 
 export const homeCctvPrachinburi: CaseStudyProject = {
-  slug: "home-cctv-installation",
-  title: "ติดตั้งกล้องวงจรปิดบ้านพักอาศัย ปราจีนบุรี",
-  location: "จังหวัดปราจีนบุรี",
-  publishedDate: "2026-07-30T22:28:00+07:00",
-  modifiedDate: "2026-07-30T22:28:00+07:00",
+  slug: registry.slug,
+  title: registry.title,
+  location: registry.location,
+  publishedDate: registry.publishedDate,
+  modifiedDate: registry.modifiedDate,
   projectDate: "2025-11",
   projectDateLabel: "พฤศจิกายน 2568",
   servicePath: "/services/cctv",

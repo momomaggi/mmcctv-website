@@ -23,6 +23,17 @@ function lines(value: string) {
   ));
 }
 
+const thaiDateFormatter = new Intl.DateTimeFormat("th-TH-u-ca-buddhist", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+  timeZone: "Asia/Bangkok",
+});
+
+function formatThaiDate(value: string) {
+  return thaiDateFormatter.format(new Date(value));
+}
+
 export default function CaseStudyPage({ project }: { project: CaseStudyProject }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const analyticsPage = `case_study_${project.slug}`;
@@ -180,9 +191,9 @@ export default function CaseStudyPage({ project }: { project: CaseStudyProject }
         <p>{project.disclosure.description}</p>
         <a href={project.servicePath}>ดูรายละเอียดบริการ{project.serviceName} <span>↗</span></a>
         <p className="case-study-published">
-          เผยแพร่ <time dateTime={project.publishedDate}>30 กรกฎาคม 2569</time>
+          เผยแพร่ <time dateTime={project.publishedDate}>{formatThaiDate(project.publishedDate)}</time>
           <span aria-hidden="true"> · </span>
-          อัปเดต <time dateTime={project.modifiedDate}>30 กรกฎาคม 2569</time>
+          อัปเดต <time dateTime={project.modifiedDate}>{formatThaiDate(project.modifiedDate)}</time>
         </p>
       </section>
 
