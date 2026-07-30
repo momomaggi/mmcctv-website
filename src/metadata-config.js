@@ -65,6 +65,21 @@ export const pageMetadata = {
     breadcrumbName: "บริการดูแลระบบ",
     serviceType: "บริการตรวจเช็กและบำรุงรักษาระบบ CCTV",
   },
+  "/case-studies/home-cctv-installation": {
+    title: "ผลงานติดตั้งกล้องวงจรปิดบ้านพักอาศัย ปราจีนบุรี | M&M CCTV",
+    description:
+      "กรณีศึกษาติดตั้งกล้องวงจรปิดบ้านพักอาศัย จ.ปราจีนบุรี เริ่มเดินสายก่อนปิดฝ้าและเก็บงานผนัง ติดตั้งกล้อง Hikvision พร้อมตั้งค่าและทดสอบระบบ",
+    path: "/case-studies/home-cctv-installation",
+    image: "/case-studies/home-cctv-prachinburi/hero-desktop.webp",
+    imageAlt: "กล้อง Hikvision ติดตั้งใต้ชายคาบ้านพักอาศัยในจังหวัดปราจีนบุรี",
+    imageWidth: 1800,
+    imageHeight: 1351,
+    imageType: "image/webp",
+    breadcrumbName: "ติดตั้ง CCTV บ้านพักอาศัย ปราจีนบุรี",
+    parentName: "กล้องวงจรปิด",
+    parentPath: "/services/cctv",
+    caseStudy: true,
+  },
 };
 
 export const notFoundMetadata = {
@@ -124,6 +139,62 @@ export function createPageStructuredData(metadata) {
     isPartOf: { "@id": `${SITE_URL}/#website` },
     primaryImageOfPage: { "@id": primaryImageId },
   };
+
+  if (metadata.caseStudy) {
+    const articleId = `${canonical}#article`;
+    const breadcrumbId = `${canonical}#breadcrumb`;
+    const parentUrl = `${SITE_URL}${metadata.parentPath}`;
+    webPage.breadcrumb = { "@id": breadcrumbId };
+    webPage.mainEntity = { "@id": articleId };
+
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        webPage,
+        imageObject,
+        {
+          "@type": "BreadcrumbList",
+          "@id": breadcrumbId,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "M&M CCTV",
+              item: `${SITE_URL}/`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: metadata.parentName,
+              item: parentUrl,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: metadata.breadcrumbName ?? pageName,
+              item: canonical,
+            },
+          ],
+        },
+        {
+          "@type": "Article",
+          "@id": articleId,
+          headline: pageName,
+          description: metadata.description,
+          image: { "@id": primaryImageId },
+          mainEntityOfPage: { "@id": webPageId },
+          inLanguage: "th-TH",
+          author: { "@id": ORGANIZATION_ID },
+          publisher: { "@id": ORGANIZATION_ID },
+          about: {
+            "@type": "Service",
+            name: "บริการออกแบบและติดตั้งระบบกล้องวงจรปิด",
+            url: parentUrl,
+          },
+        },
+      ],
+    };
+  }
 
   if (!metadata.serviceType) {
     return {

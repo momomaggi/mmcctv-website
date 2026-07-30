@@ -373,7 +373,7 @@ const scrollReviews = (direction: "previous" | "next") => {
       <section className="section works" id="works">
         <div className="section-head"><div><span className="kicker">ผลงานติดตั้ง</span><h2>ความเรียบร้อย<br/>คือส่วนหนึ่งของความปลอดภัย</h2></div><p>เราใส่ใจทั้งตำแหน่งกล้อง แนวเดินสาย ตู้เก็บอุปกรณ์ และการตั้งค่าระบบ เพื่อให้งานใช้งานง่ายและดูดีไปพร้อมกัน</p></div>
         <div className="work-grid">
-  <div className="work-main">
+  <a className="work-main" href="/case-studies/home-cctv-installation" aria-label="ดูกรณีศึกษาติดตั้งกล้องวงจรปิดบ้านพักอาศัย">
     <picture>
       <source
         media="(max-width: 620px)"
@@ -388,7 +388,7 @@ const scrollReviews = (direction: "previous" | "next") => {
 
     <span>บ้านพักอาศัยและร้านค้า</span>
     <h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3>
-  </div>
+  </a>
   <div className="work-side">
     <div>
       <picture>
