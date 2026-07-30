@@ -1,5 +1,6 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
+import { pathToFileURL } from "node:url";
 import {
   createPageStructuredData,
   getAbsoluteImageUrl,
@@ -9,7 +10,11 @@ import {
 } from "../src/metadata-config.js";
 
 const distDirectory = join(process.cwd(), "dist");
+const ssrDirectory = join(process.cwd(), "dist-ssr");
 const template = await readFile(join(distDirectory, "index.html"), "utf8");
+const { renderPage: renderReactPage } = await import(
+  pathToFileURL(join(ssrDirectory, "entry-server.js")).href
+);
 
 function escapeAttribute(value) {
   return value
@@ -38,6 +43,14 @@ function replaceCanonical(html, canonical) {
 function addPageStructuredData(html, structuredData) {
   const script = `<script id="page-structured-data" type="application/ld+json">${JSON.stringify(structuredData).replaceAll("<", "\\u003c")}</script>`;
   return html.replace("</head>", `  ${script}\n</head>`);
+}
+
+function injectBody(html, pathname) {
+  const renderedBody = renderReactPage(pathname);
+  return html.replace(
+    '<div id="root"></div>',
+    () => `<div id="root">${renderedBody}</div>`,
+  );
 }
 
 function renderPage(metadata) {
@@ -74,7 +87,8 @@ function renderPage(metadata) {
   html = replaceMeta(html, "name", "twitter:image:alt", metadata.imageAlt);
 
   const structuredData = createPageStructuredData(metadata);
-  return structuredData ? addPageStructuredData(html, structuredData) : html;
+  html = structuredData ? addPageStructuredData(html, structuredData) : html;
+  return injectBody(html, metadata.path);
 }
 
 for (const metadata of Object.values(pageMetadata)) {
@@ -90,7 +104,7 @@ for (const metadata of Object.values(pageMetadata)) {
 
 await writeFile(
   join(distDirectory, "404.html"),
-  renderPage(notFoundMetadata),
+  renderPage({ ...notFoundMetadata, path: "/404" }),
   "utf8",
 );
 console.log("prerendered /404");
@@ -111,3 +125,5 @@ ${Object.values(pageMetadata)
 
 await writeFile(join(distDirectory, "sitemap.xml"), sitemap, "utf8");
 console.log("generated /sitemap.xml");
+
+await rm(ssrDirectory, { recursive: true, force: true });

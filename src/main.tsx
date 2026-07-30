@@ -1,29 +1,27 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
-import Home from "./page";
-import CctvPage from "./cctv-page";
-import AccessControlPage from "./access-control-page";
-import BarrierPage from "./barrier-page";
-import MaintenancePage from "./maintenance-page";
-import NotFoundPage from "./not-found-page";
+import { createRoot, hydrateRoot } from "react-dom/client";
 import { applyPageMetadata } from "./metadata";
+import { getPageComponent, normalizePath } from "./routes";
 import "./styles.css";
 
-const normalizedPath = window.location.pathname.replace(/\/+$/, "") || "/";
+const normalizedPath = normalizePath(window.location.pathname);
 applyPageMetadata(normalizedPath);
 
-const routes: Record<string, React.ComponentType> = {
-  "/": Home,
-  "/services/cctv": CctvPage,
-  "/services/access-control": AccessControlPage,
-  "/services/car-park-barrier": BarrierPage,
-  "/services/maintenance": MaintenancePage,
-};
+const CurrentPage = getPageComponent(normalizedPath);
+const root = document.getElementById("root");
 
-const CurrentPage = routes[normalizedPath] ?? NotFoundPage;
+if (!root) {
+  throw new Error("Missing root element");
+}
 
-createRoot(document.getElementById("root")!).render(
+const app = (
   <React.StrictMode>
     <CurrentPage />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
+
+if (root.hasChildNodes()) {
+  hydrateRoot(root, app);
+} else {
+  createRoot(root).render(app);
+}
