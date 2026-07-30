@@ -377,17 +377,17 @@ const scrollReviews = (direction: "previous" | "next") => {
     <picture>
       <source
         media="(max-width: 620px)"
-        srcSet="/portfolio/portfolio-home-mobile.webp"
+        srcSet="/case-studies/home-cctv-prachinburi/hero-mobile.webp"
       />
       <img
-        src="/portfolio/portfolio-home.webp"
-        alt="ผลงานติดตั้งกล้องวงจรปิดสำหรับบ้านและร้านค้า"
+        src="/case-studies/home-cctv-prachinburi/hero-desktop.webp"
+        alt="ผลงานวางระบบกล้องวงจรปิดบ้านพักอาศัย จังหวัดปราจีนบุรี"
         loading="lazy"
       />
     </picture>
 
-    <span>บ้านพักอาศัยและร้านค้า</span>
-    <h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3>
+    <span>บ้านพักอาศัย · ปราจีนบุรี</span>
+    <h3>วางระบบ CCTV ตั้งแต่ช่วงก่อสร้าง</h3>
   </a>
   <div className="work-side">
     <div>
