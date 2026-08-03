@@ -373,21 +373,21 @@ const scrollReviews = (direction: "previous" | "next") => {
       <section className="section works" id="works">
         <div className="section-head"><div><span className="kicker">ผลงานติดตั้ง</span><h2>ความเรียบร้อย<br/>คือส่วนหนึ่งของความปลอดภัย</h2></div><p>เราใส่ใจทั้งตำแหน่งกล้อง แนวเดินสาย ตู้เก็บอุปกรณ์ และการตั้งค่าระบบ เพื่อให้งานใช้งานง่ายและดูดีไปพร้อมกัน</p></div>
         <div className="work-grid">
-  <a className="work-main" href="/case-studies/home-cctv-installation" aria-label="ดูกรณีศึกษาติดตั้งกล้องวงจรปิดบ้านพักอาศัย">
+  <a className="work-main" href="/services/cctv" aria-label="ดูบริการและผลงานติดตั้งกล้องวงจรปิด">
     <picture>
       <source
         media="(max-width: 620px)"
-        srcSet="/case-studies/home-cctv-prachinburi/hero-mobile.webp"
+        srcSet="/portfolio/portfolio-home-mobile.webp"
       />
       <img
-        src="/case-studies/home-cctv-prachinburi/hero-desktop.webp"
-        alt="ผลงานวางระบบกล้องวงจรปิดบ้านพักอาศัย จังหวัดปราจีนบุรี"
+        src="/portfolio/portfolio-home.webp"
+        alt="ผลงานติดตั้งกล้องวงจรปิดโดย M&M CCTV"
         loading="lazy"
       />
     </picture>
 
-    <span>บ้านพักอาศัย · ปราจีนบุรี</span>
-    <h3>วางระบบ CCTV ตั้งแต่ช่วงก่อสร้าง</h3>
+    <span>บ้านพักอาศัยและร้านค้า</span>
+    <h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3>
   </a>
   <div className="work-side">
     <div>
