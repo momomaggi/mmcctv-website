@@ -373,7 +373,7 @@ const scrollReviews = (direction: "previous" | "next") => {
       <section className="section works" id="works">
         <div className="section-head"><div><span className="kicker">ผลงานติดตั้ง</span><h2>ความเรียบร้อย<br/>คือส่วนหนึ่งของความปลอดภัย</h2></div><p>เราใส่ใจทั้งตำแหน่งกล้อง แนวเดินสาย ตู้เก็บอุปกรณ์ และการตั้งค่าระบบ เพื่อให้งานใช้งานง่ายและดูดีไปพร้อมกัน</p></div>
         <div className="work-grid">
-  <a className="work-main" href="/services/cctv" aria-label="ดูบริการและผลงานติดตั้งกล้องวงจรปิด">
+  <a className="work-main" href="/case-studies/home-cctv-installation" aria-label="ดูกรณีศึกษาติดตั้งกล้องวงจรปิดบ้านพักอาศัย จังหวัดปราจีนบุรี">
     <picture>
       <source
         media="(max-width: 620px)"
@@ -386,8 +386,12 @@ const scrollReviews = (direction: "previous" | "next") => {
       />
     </picture>
 
-    <span>บ้านพักอาศัยและร้านค้า</span>
-    <h3>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</h3>
+    <div className="work-case-study-copy">
+      <span className="work-case-study-badge">CASE STUDY · ผลงานจริง</span>
+      <h3>บ้านพักอาศัยและร้านค้า</h3>
+      <p>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</p>
+      <strong>ดูขั้นตอนติดตั้งจริง <span aria-hidden="true">→</span></strong>
+    </div>
   </a>
   <div className="work-side">
     <div>
