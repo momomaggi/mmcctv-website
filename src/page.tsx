@@ -388,8 +388,8 @@ const scrollReviews = (direction: "previous" | "next") => {
 
     <div className="work-case-study-copy">
       <span className="work-case-study-badge">CASE STUDY · ผลงานจริง</span>
-      <h3>บ้านพักอาศัยและร้านค้า</h3>
-      <p>ติดตั้งกล้อง IP พร้อมเดินท่อเก็บสาย</p>
+      <h3>ตัวอย่างงานติดตั้ง CCTV</h3>
+      <p>บ้านพักอาศัย จ.ปราจีนบุรี</p>
       <strong>ดูขั้นตอนติดตั้งจริง <span aria-hidden="true">→</span></strong>
     </div>
   </a>
